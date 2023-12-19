@@ -1,0 +1,125 @@
+\doxysection{Sh\+Gui Struct Reference}
+\hypertarget{struct_sh_gui}{}\label{struct_sh_gui}\index{ShGui@{ShGui}}
+
+
+Structure representing the main context for the GUI.  
+
+
+
+
+{\ttfamily \#include $<$shgui.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}} \mbox{\hyperlink{struct_sh_gui_ae1a9bd539609efd8dc5eee78c79542eb}{core}}
+\item 
+\mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}} \mbox{\hyperlink{struct_sh_gui_aa3d73439ab5a988ad58079dc6acc969d}{inputs}}
+\item 
+Vk\+Buffer \mbox{\hyperlink{struct_sh_gui_a1718ab4093d6f001c80b9a7236589c26}{staging\+\_\+buffer}}
+\item 
+Vk\+Device\+Memory \mbox{\hyperlink{struct_sh_gui_af74c20cc0dac8953e3d1afd49a06b46a}{staging\+\_\+memory}}
+\item 
+Vk\+Buffer \mbox{\hyperlink{struct_sh_gui_a2552ef4ade4c483639f84991d6134f4d}{dst\+\_\+buffer}}
+\item 
+Vk\+Device\+Memory \mbox{\hyperlink{struct_sh_gui_a451227f9b0af3e6a88e69a00a488573c}{dst\+\_\+memory}}
+\item 
+\mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}} \mbox{\hyperlink{struct_sh_gui_a24ff16b9dd764acc1d84e8bdf6e26234}{region\+\_\+infos}}
+\item 
+\mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}} \mbox{\hyperlink{struct_sh_gui_a0a51c495482a5a66f0a7732d6cfd02e4}{char\+\_\+infos}}
+\item 
+Sh\+Vk\+Pipeline\+Pool \mbox{\hyperlink{struct_sh_gui_abec82fcd979921ead798d0da2d3aea61}{pipeline\+\_\+pool}}
+\item 
+Sh\+Vk\+Pipeline \mbox{\hyperlink{struct_sh_gui_abeac3f0695e00b4b36c36ac6378abea6}{region\+\_\+pipeline}}
+\item 
+Sh\+Vk\+Pipeline \mbox{\hyperlink{struct_sh_gui_a7ebe3a9ebdad2f74772afa37eb4e26e2}{char\+\_\+pipeline}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the main context for the GUI. 
+
+The \doxylink{struct_sh_gui}{Sh\+Gui} structure encapsulates the core components of the GUI, including the GUI core and Vulkan components, input handling, buffers for staging and destination, regions and characters information, and Vulkan pipelines for regions and characters. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_sh_gui_a0a51c495482a5a66f0a7732d6cfd02e4}\label{struct_sh_gui_a0a51c495482a5a66f0a7732d6cfd02e4} 
+\index{ShGui@{ShGui}!char\_infos@{char\_infos}}
+\index{char\_infos@{char\_infos}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{char\_infos}{char\_infos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}} Sh\+Gui\+::char\+\_\+infos}
+
+Information about GUI characters. ~\newline
+ \Hypertarget{struct_sh_gui_a7ebe3a9ebdad2f74772afa37eb4e26e2}\label{struct_sh_gui_a7ebe3a9ebdad2f74772afa37eb4e26e2} 
+\index{ShGui@{ShGui}!char\_pipeline@{char\_pipeline}}
+\index{char\_pipeline@{char\_pipeline}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{char\_pipeline}{char\_pipeline}}
+{\footnotesize\ttfamily Sh\+Vk\+Pipeline Sh\+Gui\+::char\+\_\+pipeline}
+
+shvulkan pipeline for GUI characters. ~\newline
+ \Hypertarget{struct_sh_gui_ae1a9bd539609efd8dc5eee78c79542eb}\label{struct_sh_gui_ae1a9bd539609efd8dc5eee78c79542eb} 
+\index{ShGui@{ShGui}!core@{core}}
+\index{core@{core}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{core}{core}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}} Sh\+Gui\+::core}
+
+Core components of the GUI. ~\newline
+ \Hypertarget{struct_sh_gui_a2552ef4ade4c483639f84991d6134f4d}\label{struct_sh_gui_a2552ef4ade4c483639f84991d6134f4d} 
+\index{ShGui@{ShGui}!dst\_buffer@{dst\_buffer}}
+\index{dst\_buffer@{dst\_buffer}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{dst\_buffer}{dst\_buffer}}
+{\footnotesize\ttfamily Vk\+Buffer Sh\+Gui\+::dst\+\_\+buffer}
+
+Vulkan buffer for destination data. ~\newline
+ \Hypertarget{struct_sh_gui_a451227f9b0af3e6a88e69a00a488573c}\label{struct_sh_gui_a451227f9b0af3e6a88e69a00a488573c} 
+\index{ShGui@{ShGui}!dst\_memory@{dst\_memory}}
+\index{dst\_memory@{dst\_memory}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{dst\_memory}{dst\_memory}}
+{\footnotesize\ttfamily Vk\+Device\+Memory Sh\+Gui\+::dst\+\_\+memory}
+
+Vulkan device memory for destination data. ~\newline
+ \Hypertarget{struct_sh_gui_aa3d73439ab5a988ad58079dc6acc969d}\label{struct_sh_gui_aa3d73439ab5a988ad58079dc6acc969d} 
+\index{ShGui@{ShGui}!inputs@{inputs}}
+\index{inputs@{inputs}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{inputs}{inputs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}} Sh\+Gui\+::inputs}
+
+Input handling for the GUI. ~\newline
+ \Hypertarget{struct_sh_gui_abec82fcd979921ead798d0da2d3aea61}\label{struct_sh_gui_abec82fcd979921ead798d0da2d3aea61} 
+\index{ShGui@{ShGui}!pipeline\_pool@{pipeline\_pool}}
+\index{pipeline\_pool@{pipeline\_pool}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{pipeline\_pool}{pipeline\_pool}}
+{\footnotesize\ttfamily Sh\+Vk\+Pipeline\+Pool Sh\+Gui\+::pipeline\+\_\+pool}
+
+shvulkan pipeline pool for managing pipelines. \Hypertarget{struct_sh_gui_a24ff16b9dd764acc1d84e8bdf6e26234}\label{struct_sh_gui_a24ff16b9dd764acc1d84e8bdf6e26234} 
+\index{ShGui@{ShGui}!region\_infos@{region\_infos}}
+\index{region\_infos@{region\_infos}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{region\_infos}{region\_infos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}} Sh\+Gui\+::region\+\_\+infos}
+
+Information about GUI regions. ~\newline
+ \Hypertarget{struct_sh_gui_abeac3f0695e00b4b36c36ac6378abea6}\label{struct_sh_gui_abeac3f0695e00b4b36c36ac6378abea6} 
+\index{ShGui@{ShGui}!region\_pipeline@{region\_pipeline}}
+\index{region\_pipeline@{region\_pipeline}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{region\_pipeline}{region\_pipeline}}
+{\footnotesize\ttfamily Sh\+Vk\+Pipeline Sh\+Gui\+::region\+\_\+pipeline}
+
+shvulkan pipeline for GUI regions. ~\newline
+ \Hypertarget{struct_sh_gui_a1718ab4093d6f001c80b9a7236589c26}\label{struct_sh_gui_a1718ab4093d6f001c80b9a7236589c26} 
+\index{ShGui@{ShGui}!staging\_buffer@{staging\_buffer}}
+\index{staging\_buffer@{staging\_buffer}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{staging\_buffer}{staging\_buffer}}
+{\footnotesize\ttfamily Vk\+Buffer Sh\+Gui\+::staging\+\_\+buffer}
+
+Vulkan buffer for staging data. ~\newline
+ \Hypertarget{struct_sh_gui_af74c20cc0dac8953e3d1afd49a06b46a}\label{struct_sh_gui_af74c20cc0dac8953e3d1afd49a06b46a} 
+\index{ShGui@{ShGui}!staging\_memory@{staging\_memory}}
+\index{staging\_memory@{staging\_memory}!ShGui@{ShGui}}
+\doxysubsubsection{\texorpdfstring{staging\_memory}{staging\_memory}}
+{\footnotesize\ttfamily Vk\+Device\+Memory Sh\+Gui\+::staging\+\_\+memory}
+
+Vulkan device memory for staging data. ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/home/desktop/github/shgui/shgui/include/shgui/\mbox{\hyperlink{shgui_8h}{shgui.\+h}}\end{DoxyCompactItemize}

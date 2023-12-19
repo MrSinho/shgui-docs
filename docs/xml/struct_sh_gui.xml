@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_sh_gui" kind="struct" language="C++" prot="public">
+    <compoundname>ShGui</compoundname>
+    <includes refid="shgui_8h" local="no">shgui.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_sh_gui_1ae1a9bd539609efd8dc5eee78c79542eb" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_sh_gui_core" kindref="compound">ShGuiCore</ref></type>
+        <definition>ShGuiCore ShGui::core</definition>
+        <argsstring></argsstring>
+        <name>core</name>
+        <qualifiedname>ShGui::core</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Core components of the GUI. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="596" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="596" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1aa3d73439ab5a988ad58079dc6acc969d" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_sh_gui_inputs" kindref="compound">ShGuiInputs</ref></type>
+        <definition>ShGuiInputs ShGui::inputs</definition>
+        <argsstring></argsstring>
+        <name>inputs</name>
+        <qualifiedname>ShGui::inputs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Input handling for the GUI. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="597" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="597" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a1718ab4093d6f001c80b9a7236589c26" prot="public" static="no" mutable="no">
+        <type>VkBuffer</type>
+        <definition>VkBuffer ShGui::staging_buffer</definition>
+        <argsstring></argsstring>
+        <name>staging_buffer</name>
+        <qualifiedname>ShGui::staging_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vulkan buffer for staging data. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="598" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="598" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1af74c20cc0dac8953e3d1afd49a06b46a" prot="public" static="no" mutable="no">
+        <type>VkDeviceMemory</type>
+        <definition>VkDeviceMemory ShGui::staging_memory</definition>
+        <argsstring></argsstring>
+        <name>staging_memory</name>
+        <qualifiedname>ShGui::staging_memory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vulkan device memory for staging data. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="599" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="599" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a2552ef4ade4c483639f84991d6134f4d" prot="public" static="no" mutable="no">
+        <type>VkBuffer</type>
+        <definition>VkBuffer ShGui::dst_buffer</definition>
+        <argsstring></argsstring>
+        <name>dst_buffer</name>
+        <qualifiedname>ShGui::dst_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vulkan buffer for destination data. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="600" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="600" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a451227f9b0af3e6a88e69a00a488573c" prot="public" static="no" mutable="no">
+        <type>VkDeviceMemory</type>
+        <definition>VkDeviceMemory ShGui::dst_memory</definition>
+        <argsstring></argsstring>
+        <name>dst_memory</name>
+        <qualifiedname>ShGui::dst_memory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vulkan device memory for destination data. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="601" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="601" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a24ff16b9dd764acc1d84e8bdf6e26234" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_sh_gui_region_infos" kindref="compound">ShGuiRegionInfos</ref></type>
+        <definition>ShGuiRegionInfos ShGui::region_infos</definition>
+        <argsstring></argsstring>
+        <name>region_infos</name>
+        <qualifiedname>ShGui::region_infos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Information about GUI regions. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="602" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="602" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a0a51c495482a5a66f0a7732d6cfd02e4" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_sh_gui_char_infos" kindref="compound">ShGuiCharInfos</ref></type>
+        <definition>ShGuiCharInfos ShGui::char_infos</definition>
+        <argsstring></argsstring>
+        <name>char_infos</name>
+        <qualifiedname>ShGui::char_infos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Information about GUI characters. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="603" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="603" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1abec82fcd979921ead798d0da2d3aea61" prot="public" static="no" mutable="no">
+        <type>ShVkPipelinePool</type>
+        <definition>ShVkPipelinePool ShGui::pipeline_pool</definition>
+        <argsstring></argsstring>
+        <name>pipeline_pool</name>
+        <qualifiedname>ShGui::pipeline_pool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>shvulkan pipeline pool for managing pipelines. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="604" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="604" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1abeac3f0695e00b4b36c36ac6378abea6" prot="public" static="no" mutable="no">
+        <type>ShVkPipeline</type>
+        <definition>ShVkPipeline ShGui::region_pipeline</definition>
+        <argsstring></argsstring>
+        <name>region_pipeline</name>
+        <qualifiedname>ShGui::region_pipeline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>shvulkan pipeline for GUI regions. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="605" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="605" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_1a7ebe3a9ebdad2f74772afa37eb4e26e2" prot="public" static="no" mutable="no">
+        <type>ShVkPipeline</type>
+        <definition>ShVkPipeline ShGui::char_pipeline</definition>
+        <argsstring></argsstring>
+        <name>char_pipeline</name>
+        <qualifiedname>ShGui::char_pipeline</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>shvulkan pipeline for GUI characters. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="606" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="606" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Structure representing the main context for the GUI. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="struct_sh_gui" kindref="compound">ShGui</ref> structure encapsulates the core components of the GUI, including the GUI core and Vulkan components, input handling, buffers for staging and destination, regions and characters information, and Vulkan pipelines for regions and characters. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ShGui</label>
+        <link refid="struct_sh_gui"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>core</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>inputs</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>region_infos</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>char_infos</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ShGuiCharInfos</label>
+        <link refid="struct_sh_gui_char_infos"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>chars_raw</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ShGuiCharRaw</label>
+        <link refid="struct_sh_gui_char_raw"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ShGuiCore</label>
+        <link refid="struct_sh_gui_core"/>
+      </node>
+      <node id="3">
+        <label>ShGuiInputs</label>
+        <link refid="struct_sh_gui_inputs"/>
+      </node>
+      <node id="4">
+        <label>ShGuiRegionInfos</label>
+        <link refid="struct_sh_gui_region_infos"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>regions_raw</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ShGuiRegionRaw</label>
+        <link refid="struct_sh_gui_region_raw"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>position</edgelabel>
+          <edgelabel>scale</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>edge_color</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>shguivec2</label>
+        <link refid="structshguivec2"/>
+      </node>
+      <node id="8">
+        <label>shguivec3</label>
+        <link refid="structshguivec3"/>
+      </node>
+      <node id="7">
+        <label>shguivec4</label>
+        <link refid="structshguivec4"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="595" column="1" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="595" bodyend="607"/>
+    <listofallmembers>
+      <member refid="struct_sh_gui_1a0a51c495482a5a66f0a7732d6cfd02e4" prot="public" virt="non-virtual"><scope>ShGui</scope><name>char_infos</name></member>
+      <member refid="struct_sh_gui_1a7ebe3a9ebdad2f74772afa37eb4e26e2" prot="public" virt="non-virtual"><scope>ShGui</scope><name>char_pipeline</name></member>
+      <member refid="struct_sh_gui_1ae1a9bd539609efd8dc5eee78c79542eb" prot="public" virt="non-virtual"><scope>ShGui</scope><name>core</name></member>
+      <member refid="struct_sh_gui_1a2552ef4ade4c483639f84991d6134f4d" prot="public" virt="non-virtual"><scope>ShGui</scope><name>dst_buffer</name></member>
+      <member refid="struct_sh_gui_1a451227f9b0af3e6a88e69a00a488573c" prot="public" virt="non-virtual"><scope>ShGui</scope><name>dst_memory</name></member>
+      <member refid="struct_sh_gui_1aa3d73439ab5a988ad58079dc6acc969d" prot="public" virt="non-virtual"><scope>ShGui</scope><name>inputs</name></member>
+      <member refid="struct_sh_gui_1abec82fcd979921ead798d0da2d3aea61" prot="public" virt="non-virtual"><scope>ShGui</scope><name>pipeline_pool</name></member>
+      <member refid="struct_sh_gui_1a24ff16b9dd764acc1d84e8bdf6e26234" prot="public" virt="non-virtual"><scope>ShGui</scope><name>region_infos</name></member>
+      <member refid="struct_sh_gui_1abeac3f0695e00b4b36c36ac6378abea6" prot="public" virt="non-virtual"><scope>ShGui</scope><name>region_pipeline</name></member>
+      <member refid="struct_sh_gui_1a1718ab4093d6f001c80b9a7236589c26" prot="public" virt="non-virtual"><scope>ShGui</scope><name>staging_buffer</name></member>
+      <member refid="struct_sh_gui_1af74c20cc0dac8953e3d1afd49a06b46a" prot="public" virt="non-virtual"><scope>ShGui</scope><name>staging_memory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

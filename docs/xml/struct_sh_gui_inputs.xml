@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_sh_gui_inputs" kind="struct" language="C++" prot="public">
+    <compoundname>ShGuiInputs</compoundname>
+    <includes refid="shgui_8h" local="no">shgui.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_sh_gui_inputs_1a5e333ebf323fa146397a67eaa7508c95" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* ShGuiInputs::p_window_width</definition>
+        <argsstring></argsstring>
+        <name>p_window_width</name>
+        <qualifiedname>ShGuiInputs::p_window_width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the window&apos;s width. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="148" column="21" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_inputs_1af0ff0a7f897f16b2bd510fc26ae31b0d" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* ShGuiInputs::p_window_height</definition>
+        <argsstring></argsstring>
+        <name>p_window_height</name>
+        <qualifiedname>ShGuiInputs::p_window_height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to the window&apos;s height. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="149" column="21" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_inputs_1a60951e20452817633f172504537a2dae" prot="public" static="no" mutable="no">
+        <type>int8_t *</type>
+        <definition>int8_t* ShGuiInputs::key_events</definition>
+        <argsstring></argsstring>
+        <name>key_events</name>
+        <qualifiedname>ShGuiInputs::key_events</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block to store key events. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="150" column="21" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_inputs_1af20b322fcb3d8f2ad84c203f69ba4780" prot="public" static="no" mutable="no">
+        <type>int8_t *</type>
+        <definition>int8_t* ShGuiInputs::last_key_events</definition>
+        <argsstring></argsstring>
+        <name>last_key_events</name>
+        <qualifiedname>ShGuiInputs::last_key_events</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block to store the last recorded key events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="151" column="21" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_inputs_1a910daef2850309db23885949fe8a97fc" prot="public" static="no" mutable="no">
+        <type><ref refid="shgui_8h_1aac42692bf846c31d71b89bd5e89c30a1" kindref="member">ShGui_UTF32_Char</ref></type>
+        <definition>ShGui_UTF32_Char ShGuiInputs::system_submitted_char</definition>
+        <argsstring></argsstring>
+        <name>system_submitted_char</name>
+        <qualifiedname>ShGuiInputs::system_submitted_char</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>System-submitted character for text input. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="152" column="22" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents <computeroutput>shgui</computeroutput> input data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="struct_sh_gui_inputs" kindref="compound">ShGuiInputs</ref></computeroutput> structure encapsulates various input data used in <computeroutput>shgui</computeroutput> applications, including window dimensions, key events, and a system-submitted character. It is designed to help manage and process input-related information. </para>
+    </detaileddescription>
+    <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="147" column="1" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="147" bodyend="153"/>
+    <listofallmembers>
+      <member refid="struct_sh_gui_inputs_1a60951e20452817633f172504537a2dae" prot="public" virt="non-virtual"><scope>ShGuiInputs</scope><name>key_events</name></member>
+      <member refid="struct_sh_gui_inputs_1af20b322fcb3d8f2ad84c203f69ba4780" prot="public" virt="non-virtual"><scope>ShGuiInputs</scope><name>last_key_events</name></member>
+      <member refid="struct_sh_gui_inputs_1af0ff0a7f897f16b2bd510fc26ae31b0d" prot="public" virt="non-virtual"><scope>ShGuiInputs</scope><name>p_window_height</name></member>
+      <member refid="struct_sh_gui_inputs_1a5e333ebf323fa146397a67eaa7508c95" prot="public" virt="non-virtual"><scope>ShGuiInputs</scope><name>p_window_width</name></member>
+      <member refid="struct_sh_gui_inputs_1a910daef2850309db23885949fe8a97fc" prot="public" virt="non-virtual"><scope>ShGuiInputs</scope><name>system_submitted_char</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

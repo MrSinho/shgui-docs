@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structshguivec3" kind="struct" language="C++" prot="public">
+    <compoundname>shguivec3</compoundname>
+    <includes refid="shgui_8h" local="no">shgui.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structshguivec3_1ab525e5daf7e6e4062feca045d270ee31" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float shguivec3::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>shguivec3::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The x-component of the 3D vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="175" column="7" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshguivec3_1a6d97cfc24222a48730195c0901ec84a4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float shguivec3::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>shguivec3::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The y-component of the 3D vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="176" column="7" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshguivec3_1a47ec160a9fc6dca877842f60261825e3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float shguivec3::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>shguivec3::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The z-component of the 3D vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="177" column="7" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a 3D vector with three float components. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="structshguivec3" kindref="compound">shguivec3</ref></computeroutput> structure is used to represent 3D vectors with <computeroutput>x</computeroutput>, <computeroutput>y</computeroutput>, and <computeroutput>z</computeroutput> components. It is typically utilized in <computeroutput>shgui</computeroutput> applications for various 3D operations. </para>
+    </detaileddescription>
+    <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="174" column="1" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="174" bodyend="178"/>
+    <listofallmembers>
+      <member refid="structshguivec3_1ab525e5daf7e6e4062feca045d270ee31" prot="public" virt="non-virtual"><scope>shguivec3</scope><name>x</name></member>
+      <member refid="structshguivec3_1a6d97cfc24222a48730195c0901ec84a4" prot="public" virt="non-virtual"><scope>shguivec3</scope><name>y</name></member>
+      <member refid="structshguivec3_1a47ec160a9fc6dca877842f60261825e3" prot="public" virt="non-virtual"><scope>shguivec3</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

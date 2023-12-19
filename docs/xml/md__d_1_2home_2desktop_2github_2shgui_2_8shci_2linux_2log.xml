@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md__d_1_2home_2desktop_2github_2shgui_2_8shci_2linux_2log" kind="page">
+    <compoundname>md__d_1_2home_2desktop_2github_2shgui_2_8shci_2linux_2log</compoundname>
+    <title>Linux build logs</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__d_1_2home_2desktop_2github_2shgui_2_8shci_2linux_2log_1autotoc_md8"/> <image type="html" name="linux-exit-code.svg"></image>
+ <image type="latex" name="linux-exit-code.svg"></image>
+ <image type="rtf" name="linux-exit-code.svg"></image>
+ <image type="docbook" name="linux-exit-code.svg"></image>
+ <image type="xml" name="linux-exit-code.svg"></image>
+</para>
+<para><programlisting><codeline><highlight class="normal">system<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Linux</highlight></codeline>
+<codeline><highlight class="normal">version<sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>#1<sp/>SMP<sp/>Thu<sp/>Oct<sp/>5<sp/>21:02:42<sp/>UTC<sp/>2023</highlight></codeline>
+<codeline><highlight class="normal">platform<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>Linux-5.15.133.1-microsoft-standard-WSL2-x86_64-with-glibc2.31</highlight></codeline>
+<codeline><highlight class="normal">processor<sp/><sp/><sp/><sp/><sp/>:<sp/></highlight></codeline>
+<codeline><highlight class="normal">min<sp/>frequency<sp/>:<sp/>0.0<sp/>MHz</highlight></codeline>
+<codeline><highlight class="normal">max<sp/>frequency<sp/>:<sp/>0.0<sp/>MHz</highlight></codeline>
+<codeline><highlight class="normal">cores<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>4</highlight></codeline>
+</programlisting></para>
+<para>build ran for <computeroutput>94.37 s</computeroutput> and terminated with exit code <computeroutput>0</computeroutput></para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">function<sp/>PREREQUISITES<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt<sp/>-y<sp/>update</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt<sp/>install<sp/>-y<sp/>libvulkan-dev<sp/>libvulkan1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt<sp/>install<sp/>-y<sp/>libx11-dev<sp/>libxrandr-dev<sp/>libxinerama-dev<sp/>libxcursor-dev<sp/>libxi-dev</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt<sp/>install<sp/>-y<sp/>libwayland-dev</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt<sp/>install<sp/>-y<sp/>gcc<sp/>cmake<sp/>make<sp/>libc6-dev</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">PREREQUISITES<sp/>&gt;<sp/>.shci/linux/prerequisites-output.txt</highlight></codeline>
+</programlisting></para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">Hit:1<sp/>http://deb.debian.org/debian<sp/>bullseye<sp/>InRelease</highlight></codeline>
+<codeline><highlight class="normal">Hit:2<sp/>http://deb.debian.org/debian<sp/>bullseye-updates<sp/>InRelease</highlight></codeline>
+<codeline><highlight class="normal">Hit:3<sp/>http://security.debian.org/debian-security<sp/>bullseye-security<sp/>InRelease</highlight></codeline>
+<codeline><highlight class="normal">Hit:4<sp/>http://ftp.debian.org/debian<sp/>bullseye-backports<sp/>InRelease</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>package<sp/>lists...</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>dependency<sp/>tree...</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>state<sp/>information...</highlight></codeline>
+<codeline><highlight class="normal">39<sp/>packages<sp/>can<sp/>be<sp/>upgraded.<sp/>Run<sp/>&apos;apt<sp/>list<sp/>--upgradable&apos;<sp/>to<sp/>see<sp/>them.</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>package<sp/>lists...</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>dependency<sp/>tree...</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>state<sp/>information...</highlight></codeline>
+<codeline><highlight class="normal">libvulkan-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(1.2.162.0-1).</highlight></codeline>
+<codeline><highlight class="normal">libvulkan1<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(1.2.162.0-1).</highlight></codeline>
+<codeline><highlight class="normal">0<sp/>upgraded,<sp/>0<sp/>newly<sp/>installed,<sp/>0<sp/>to<sp/>remove<sp/>and<sp/>39<sp/>not<sp/>upgraded.</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>package<sp/>lists...</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>dependency<sp/>tree...</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>state<sp/>information...</highlight></codeline>
+<codeline><highlight class="normal">libxcursor-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(1:1.2.0-2).</highlight></codeline>
+<codeline><highlight class="normal">libxi-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(2:1.7.10-1).</highlight></codeline>
+<codeline><highlight class="normal">libxinerama-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(2:1.1.4-2).</highlight></codeline>
+<codeline><highlight class="normal">libxrandr-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(2:1.5.1-1).</highlight></codeline>
+<codeline><highlight class="normal">libx11-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(2:1.7.2-1+deb11u2).</highlight></codeline>
+<codeline><highlight class="normal">0<sp/>upgraded,<sp/>0<sp/>newly<sp/>installed,<sp/>0<sp/>to<sp/>remove<sp/>and<sp/>39<sp/>not<sp/>upgraded.</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>package<sp/>lists...</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>dependency<sp/>tree...</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>state<sp/>information...</highlight></codeline>
+<codeline><highlight class="normal">libwayland-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(1.18.0-2~exp1.1).</highlight></codeline>
+<codeline><highlight class="normal">0<sp/>upgraded,<sp/>0<sp/>newly<sp/>installed,<sp/>0<sp/>to<sp/>remove<sp/>and<sp/>39<sp/>not<sp/>upgraded.</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>package<sp/>lists...</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>dependency<sp/>tree...</highlight></codeline>
+<codeline><highlight class="normal">Reading<sp/>state<sp/>information...</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(3.18.4-2+deb11u1).</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(4:10.2.1-1).</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(4.3-4.1).</highlight></codeline>
+<codeline><highlight class="normal">libc6-dev<sp/>is<sp/>already<sp/>the<sp/>newest<sp/>version<sp/>(2.31-13+deb11u7).</highlight></codeline>
+<codeline><highlight class="normal">0<sp/>upgraded,<sp/>0<sp/>newly<sp/>installed,<sp/>0<sp/>to<sp/>remove<sp/>and<sp/>39<sp/>not<sp/>upgraded.</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">function<sp/>BUILD<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>build/linux</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>build/linux</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>../../<sp/>-DSH_GUI_BUILD_EXAMPLE=ON</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>--build<sp/>.</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">BUILD<sp/>&gt;<sp/>.shci/linux/build-output.txt</highlight></codeline>
+</programlisting></para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">--<sp/>shvulkan<sp/>message:<sp/>found<sp/>Vulkan</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>shvulkan<sp/>message:<sp/>Vulkan_INCLUDE_DIR:<sp/>/usr/include</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>shvulkan<sp/>message:<sp/>Vulkan_LIBRARY:<sp/><sp/><sp/><sp/><sp/>/usr/lib/x86_64-linux-gnu/libvulkan.so</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Could<sp/>NOT<sp/>find<sp/>Doxygen<sp/>(missing:<sp/>DOXYGEN_EXECUTABLE)<sp/></highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Including<sp/>X11<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Could<sp/>NOT<sp/>find<sp/>Doxygen<sp/>(missing:<sp/>DOXYGEN_EXECUTABLE)<sp/></highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Configuring<sp/>done</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Generating<sp/>done</highlight></codeline>
+<codeline><highlight class="normal">--<sp/>Build<sp/>files<sp/>have<sp/>been<sp/>written<sp/>to:<sp/>/mnt/d/home/desktop/github/shgui/build/linux</highlight></codeline>
+<codeline><highlight class="normal">[<sp/><sp/>5%]<sp/>Built<sp/>target<sp/>shvulkan</highlight></codeline>
+<codeline><highlight class="normal">[<sp/>13%]<sp/>Built<sp/>target<sp/>shgui</highlight></codeline>
+<codeline><highlight class="normal">[<sp/>78%]<sp/>Built<sp/>target<sp/>glfw</highlight></codeline>
+<codeline><highlight class="normal">[<sp/>83%]<sp/>Built<sp/>target<sp/>shgui-app</highlight></codeline>
+<codeline><highlight class="normal">[<sp/>89%]<sp/>Built<sp/>target<sp/>shgui-example</highlight></codeline>
+<codeline><highlight class="normal">[<sp/>94%]<sp/>Built<sp/>target<sp/>native-export</highlight></codeline>
+<codeline><highlight class="normal">[100%]<sp/>Built<sp/>target<sp/>shgui-export-shaders</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+<para>build ran for <computeroutput>94.37 s</computeroutput> and terminated with exit code <computeroutput>0</computeroutput></para>
+<para><hruler/>
+ </para>
+    </detaileddescription>
+    <location file="D:/home/desktop/github/shgui/.shci/linux/log.md"/>
+  </compounddef>
+</doxygen>

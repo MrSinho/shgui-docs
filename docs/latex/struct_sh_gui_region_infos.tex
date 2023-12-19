@@ -1,0 +1,62 @@
+\doxysection{Sh\+Gui\+Region\+Infos Struct Reference}
+\hypertarget{struct_sh_gui_region_infos}{}\label{struct_sh_gui_region_infos}\index{ShGuiRegionInfos@{ShGuiRegionInfos}}
+
+
+Stores information about {\ttfamily shgui} regions.  
+
+
+
+
+{\ttfamily \#include $<$shgui.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{struct_sh_gui_region_infos_a5baf2d09673da6ab3e3065183abe0f25}{region\+\_\+scale\+\_\+factor}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_sh_gui_region_infos_af1a8593c5c5866ffdb4570c9a346c010}{region\+\_\+count}}
+\item 
+\mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \mbox{\hyperlink{struct_sh_gui_region_infos_af073a93da41bc54dbbe9da050304db70}{regions\+\_\+raw}} \mbox{[}\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}}\mbox{]}
+\item 
+\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} \mbox{\hyperlink{struct_sh_gui_region_infos_a05b2dfb0586a43a4bd536905b45877d1}{regions\+\_\+raw\+\_\+write\+\_\+flags}} \mbox{[}\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores information about {\ttfamily shgui} regions. 
+
+The {\ttfamily \doxylink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}} structure is used to store information about {\ttfamily shgui} regions. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_sh_gui_region_infos_af1a8593c5c5866ffdb4570c9a346c010}\label{struct_sh_gui_region_infos_af1a8593c5c5866ffdb4570c9a346c010} 
+\index{ShGuiRegionInfos@{ShGuiRegionInfos}!region\_count@{region\_count}}
+\index{region\_count@{region\_count}!ShGuiRegionInfos@{ShGuiRegionInfos}}
+\doxysubsubsection{\texorpdfstring{region\_count}{region\_count}}
+{\footnotesize\ttfamily uint32\+\_\+t Sh\+Gui\+Region\+Infos\+::region\+\_\+count}
+
+The total count of regions. ~\newline
+ \Hypertarget{struct_sh_gui_region_infos_a5baf2d09673da6ab3e3065183abe0f25}\label{struct_sh_gui_region_infos_a5baf2d09673da6ab3e3065183abe0f25} 
+\index{ShGuiRegionInfos@{ShGuiRegionInfos}!region\_scale\_factor@{region\_scale\_factor}}
+\index{region\_scale\_factor@{region\_scale\_factor}!ShGuiRegionInfos@{ShGuiRegionInfos}}
+\doxysubsubsection{\texorpdfstring{region\_scale\_factor}{region\_scale\_factor}}
+{\footnotesize\ttfamily float Sh\+Gui\+Region\+Infos\+::region\+\_\+scale\+\_\+factor}
+
+A floating-\/point value representing the region scale factor. ~\newline
+ \Hypertarget{struct_sh_gui_region_infos_af073a93da41bc54dbbe9da050304db70}\label{struct_sh_gui_region_infos_af073a93da41bc54dbbe9da050304db70} 
+\index{ShGuiRegionInfos@{ShGuiRegionInfos}!regions\_raw@{regions\_raw}}
+\index{regions\_raw@{regions\_raw}!ShGuiRegionInfos@{ShGuiRegionInfos}}
+\doxysubsubsection{\texorpdfstring{regions\_raw}{regions\_raw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} Sh\+Gui\+Region\+Infos\+::regions\+\_\+raw\mbox{[}\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}}\mbox{]}}
+
+A memory block of \doxylink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw} structures representing raw region data. ~\newline
+ \Hypertarget{struct_sh_gui_region_infos_a05b2dfb0586a43a4bd536905b45877d1}\label{struct_sh_gui_region_infos_a05b2dfb0586a43a4bd536905b45877d1} 
+\index{ShGuiRegionInfos@{ShGuiRegionInfos}!regions\_raw\_write\_flags@{regions\_raw\_write\_flags}}
+\index{regions\_raw\_write\_flags@{regions\_raw\_write\_flags}!ShGuiRegionInfos@{ShGuiRegionInfos}}
+\doxysubsubsection{\texorpdfstring{regions\_raw\_write\_flags}{regions\_raw\_write\_flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} Sh\+Gui\+Region\+Infos\+::regions\+\_\+raw\+\_\+write\+\_\+flags\mbox{[}\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}}\mbox{]}}
+
+A memory block of \doxylink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags} for specifying raw write operations on regions. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/home/desktop/github/shgui/shgui/include/shgui/\mbox{\hyperlink{shgui_8h}{shgui.\+h}}\end{DoxyCompactItemize}

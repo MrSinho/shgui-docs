@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_1ef580163bf501c82616ccf166183bfe" kind="dir">
+    <compoundname>D:/home/desktop/github/shgui</compoundname>
+    <innerdir refid="dir_d43f6504a493a4c0f2597638f75c9508">D:/home/desktop/github/shgui/.shci</innerdir>
+    <innerdir refid="dir_4fcc238710bf8699a909dc0cb5fe9841">D:/home/desktop/github/shgui/docs</innerdir>
+    <innerdir refid="dir_463904091c8e28d17e965c7e7ecb5620">D:/home/desktop/github/shgui/shgui</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/home/desktop/github/shgui/"/>
+  </compounddef>
+</doxygen>

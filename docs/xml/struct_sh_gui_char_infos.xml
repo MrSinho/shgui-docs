@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_sh_gui_char_infos" kind="struct" language="C++" prot="public">
+    <compoundname>ShGuiCharInfos</compoundname>
+    <includes refid="shgui_8h" local="no">shgui.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a8771910603e19c7d7c3a82e2d4682eaf" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ShGuiCharInfos::char_scale_factor</definition>
+        <argsstring></argsstring>
+        <name>char_scale_factor</name>
+        <qualifiedname>ShGuiCharInfos::char_scale_factor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The scale factor applied to all characters in the GUI. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="481" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a1e4d5eca547a6edfa0b2ca9611fd59a2" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t ShGuiCharInfos::char_count</definition>
+        <argsstring></argsstring>
+        <name>char_count</name>
+        <qualifiedname>ShGuiCharInfos::char_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The total count of characters in the GUI. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="482" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a25d6aa61f2a0988be589bd305f329dfb" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_sh_gui_char_raw" kindref="compound">ShGuiCharRaw</ref></type>
+        <definition>ShGuiCharRaw ShGuiCharInfos::chars_raw[SH_GUI_MAX_CHAR_COUNT]</definition>
+        <argsstring>[SH_GUI_MAX_CHAR_COUNT]</argsstring>
+        <name>chars_raw</name>
+        <qualifiedname>ShGuiCharInfos::chars_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block storing raw data for each GUI character. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="483" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="483" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a56359abe4fe835a6fc33aee8fc10f38b" prot="public" static="no" mutable="no">
+        <type><ref refid="shgui_8h_1aa3c1dd28d77fc2ffc98e3ab08ba108cf" kindref="member">ShGuiCharVertexRaw</ref></type>
+        <definition>ShGuiCharVertexRaw ShGuiCharInfos::chars_vertex_raw[SH_GUI_MAX_CHAR_COUNT]</definition>
+        <argsstring>[SH_GUI_MAX_CHAR_COUNT]</argsstring>
+        <name>chars_vertex_raw</name>
+        <qualifiedname>ShGuiCharInfos::chars_vertex_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block storing raw vertex data for each GUI character. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="484" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="484" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a21006477553a560623f450e8a978989d" prot="public" static="no" mutable="no">
+        <type><ref refid="shgui_8h_1a028083eb19dec4c6514679d168ce4d04" kindref="member">ShGuiCharRawWriteFlags</ref></type>
+        <definition>ShGuiCharRawWriteFlags ShGuiCharInfos::chars_raw_write_flags[SH_GUI_MAX_CHAR_COUNT]</definition>
+        <argsstring>[SH_GUI_MAX_CHAR_COUNT]</argsstring>
+        <name>chars_raw_write_flags</name>
+        <qualifiedname>ShGuiCharInfos::chars_raw_write_flags</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block storing write flags for each GUI character. <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="485" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="485" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sh_gui_char_infos_1a1886583614bd527fcc9d8bd8625241ed" prot="public" static="no" mutable="no">
+        <type><ref refid="shgui_8h_1aa3c1dd28d77fc2ffc98e3ab08ba108cf" kindref="member">ShGuiCharVertexRaw</ref></type>
+        <definition>ShGuiCharVertexRaw ShGuiCharInfos::chars_font_mesh[SH_GUI_SUPPORTED_CHAR_COUNT]</definition>
+        <argsstring>[SH_GUI_SUPPORTED_CHAR_COUNT]</argsstring>
+        <name>chars_font_mesh</name>
+        <qualifiedname>ShGuiCharInfos::chars_font_mesh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory block storing the vertex position for each character type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="486" column="29" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="486" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Structure containing information about GUI characters. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ShGuiCharInfos</label>
+        <link refid="struct_sh_gui_char_infos"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>chars_raw</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ShGuiCharRaw</label>
+        <link refid="struct_sh_gui_char_raw"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>shguivec2</label>
+        <link refid="structshguivec2"/>
+      </node>
+      <node id="4">
+        <label>shguivec4</label>
+        <link refid="structshguivec4"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="480" column="1" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="480" bodyend="487"/>
+    <listofallmembers>
+      <member refid="struct_sh_gui_char_infos_1a1e4d5eca547a6edfa0b2ca9611fd59a2" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>char_count</name></member>
+      <member refid="struct_sh_gui_char_infos_1a8771910603e19c7d7c3a82e2d4682eaf" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>char_scale_factor</name></member>
+      <member refid="struct_sh_gui_char_infos_1a1886583614bd527fcc9d8bd8625241ed" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>chars_font_mesh</name></member>
+      <member refid="struct_sh_gui_char_infos_1a25d6aa61f2a0988be589bd305f329dfb" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>chars_raw</name></member>
+      <member refid="struct_sh_gui_char_infos_1a21006477553a560623f450e8a978989d" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>chars_raw_write_flags</name></member>
+      <member refid="struct_sh_gui_char_infos_1a56359abe4fe835a6fc33aee8fc10f38b" prot="public" virt="non-virtual"><scope>ShGuiCharInfos</scope><name>chars_vertex_raw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

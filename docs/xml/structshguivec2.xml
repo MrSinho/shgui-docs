@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structshguivec2" kind="struct" language="C++" prot="public">
+    <compoundname>shguivec2</compoundname>
+    <includes refid="shgui_8h" local="no">shgui.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structshguivec2_1a6eb5b41b5ca57227bc06628b7dd1cbe4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float shguivec2::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>shguivec2::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The x-component of the 2D vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="164" column="7" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structshguivec2_1a0d73f519975555590c065d3ef42e7f82" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float shguivec2::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>shguivec2::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The y-component of the 2D vector. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="165" column="7" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a 2D vector with two float components. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="structshguivec2" kindref="compound">shguivec2</ref></computeroutput> structure is used to represent 2D vectors with <computeroutput>x</computeroutput> and <computeroutput>y</computeroutput> components. It is commonly employed in <computeroutput>shgui</computeroutput> applications for various 2D operations. </para>
+    </detaileddescription>
+    <location file="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" line="163" column="1" bodyfile="D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h" bodystart="163" bodyend="166"/>
+    <listofallmembers>
+      <member refid="structshguivec2_1a6eb5b41b5ca57227bc06628b7dd1cbe4" prot="public" virt="non-virtual"><scope>shguivec2</scope><name>x</name></member>
+      <member refid="structshguivec2_1a0d73f519975555590c065d3ef42e7f82" prot="public" virt="non-virtual"><scope>shguivec2</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

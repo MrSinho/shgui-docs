@@ -1,0 +1,1874 @@
+\doxysection{D\+:/home/desktop/github/shgui/shgui/include/shgui/shgui.h File Reference}
+\hypertarget{shgui_8h}{}\label{shgui_8h}\index{D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h@{D:/home/desktop/github/shgui/shgui/include/shgui/shgui.h}}
+{\ttfamily \#include $<$shgui-\/shaders/shgui\+Shaders.\+h$>$}\newline
+{\ttfamily \#include $<$shvulkan/sh\+Vulkan.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}}
+\begin{DoxyCompactList}\small\item\em Represents the core Vulkan components for the {\ttfamily shgui} library. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}}
+\begin{DoxyCompactList}\small\item\em Represents {\ttfamily shgui} input data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structshguivec2}{shguivec2}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D vector with two float components. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structshguivec3}{shguivec3}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D vector with three float components. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structshguivec4}{shguivec4}}
+\begin{DoxyCompactList}\small\item\em Represents a 4D vector with four float components. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}}
+\begin{DoxyCompactList}\small\item\em Represents raw data for a {\ttfamily shgui} region. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}}
+\begin{DoxyCompactList}\small\item\em Stores information about {\ttfamily shgui} regions. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}}
+\begin{DoxyCompactList}\small\item\em Represents raw data for a {\ttfamily shgui} character. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}}
+\begin{DoxyCompactList}\small\item\em Structure containing information about GUI characters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}}
+\begin{DoxyCompactList}\small\item\em Structure representing the main context for the GUI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}}
+\item 
+\#define \mbox{\hyperlink{shgui_8h_ae69f5ff88630435153622cab22fa49d9}{sh\+Gui\+Error}}(condition,  error\+\_\+msg,  failure\+\_\+expression)
+\item 
+\#define \mbox{\hyperlink{shgui_8h_ac3ada90cbae19b201bc363a7289eb278}{sh\+Gui\+Vk\+Result\+Error}}(result,  error\+\_\+msg,  failure\+\_\+expression)
+\begin{DoxyCompactList}\small\item\em Macro for checking Vulkan API call results and handling errors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a129d0fea58bef41ded95cae4f008a8b0}{SH\+\_\+\+GUI\+\_\+\+STRUCTURE\+\_\+\+ZERO}}~\{ 0 \}
+\item 
+\#define \mbox{\hyperlink{shgui_8h_ad963d28a02072b1a5f3a0ee531d25e1c}{SH\+\_\+\+GUI\+\_\+\+KEY\+\_\+\+LAST}}~348
+\begin{DoxyCompactList}\small\item\em The last valid key event code in the {\ttfamily shgui} library. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a1abb4b4b5fcb9c2575a66e66f4611f94}{SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+KEY}}~UINT8\+\_\+\+MAX
+\begin{DoxyCompactList}\small\item\em A constant representing the absence of a key event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a62230dab64005300af538ac7f5c2cee8}{SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO
+\begin{DoxyCompactList}\small\item\em Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a3db1e144da2d742bddb9f72e6f0ea82b}{SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO
+\begin{DoxyCompactList}\small\item\em Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a79e017d39157bd3bf919edede8883fac}{SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO
+\begin{DoxyCompactList}\small\item\em Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a55b882c68c1a5b8b7433d478ff6e31f8}{SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+COPY}}(dst,  src)~(((dst).x = (src).x) \&\& ((dst).y = (src).y))
+\begin{DoxyCompactList}\small\item\em Copy a 2D vector from source to destination. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_aba1d5152ca796c2e4922d02767010816}{SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+COPY}}(dst,  src)~(((dst).x = (src).x) \&\& ((dst).y = (src).y) \&\& ((dst).z = (src).z))
+\begin{DoxyCompactList}\small\item\em Copy a 3D vector from source to destination. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ac317ba09231b9edea68dac8ecb9efa38}{SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+COPY}}(dst,  src)~(((dst).x = (src).x) \&\& ((dst).y = (src).y) \&\& ((dst).z = (src).z) \&\& ((dst).w = (src).w))
+\begin{DoxyCompactList}\small\item\em Copy a 4D vector from source to destination. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_aca6d17443ff40992fef7c1fd56ffcbd0}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+BLACK}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing black. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a611e881b86790f284171a9d5263b58d5}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+WHITE}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 1.\+0f, 1.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing white. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a70f23061128777d2086ef87a5e8c3ec5}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+RED}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 0.\+0f, 0.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing red. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a722f2981a79d63aa1df756db30c1706f}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+GREEN}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 1.\+0f, 0.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing green. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a15a60674c2fc127127168fdcaddb4f57}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+BLUE}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 0.\+0f, 1.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing blue. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a48f355c4e30f9d009f01f6c307d0ea04}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+YELLOW}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 1.\+0f, 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing yellow. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ac4c02963bdf2762b7acad2a5a8d2ad99}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+CYAN}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 1.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing cyan. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ab637c8171a8ae93574f9348e367957ba}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+MAGENTA}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 0.\+0f, 1.\+0f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing magenta. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a23250eff24457584cc8b8656becd20c7}{SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+GREY}}~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+5f, 0.\+5f, 0.\+5f \}
+\begin{DoxyCompactList}\small\item\em Color constant representing grey. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}}~1024
+\begin{DoxyCompactList}\small\item\em Maximum number of regions supported in a {\ttfamily shgui} application. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE}}~(\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}}))
+\begin{DoxyCompactList}\small\item\em Maximum size in bytes for raw region data in a {\ttfamily shgui} application. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT}}~2048
+\begin{DoxyCompactList}\small\item\em The maximum number of characters supported by the GUI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a072f09b6047aa85d165c13bb4302929b}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE}}~(\mbox{\hyperlink{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}}))
+\begin{DoxyCompactList}\small\item\em The raw size (in bytes) required to store the maximum number of characters. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE}}~(\mbox{\hyperlink{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{shgui_8h_aa3c1dd28d77fc2ffc98e3ab08ba108cf}{Sh\+Gui\+Char\+Vertex\+Raw}}))
+\begin{DoxyCompactList}\small\item\em The raw size (in bytes) required to store the maximum number of character vertices. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a93a3e3d7e1c9f5e0b4e7bf33ed312533}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+ROW\+\_\+\+COUNT}}~7
+\begin{DoxyCompactList}\small\item\em Number of rows in the {\ttfamily shgui} character grid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_addd4fc144ef8c68df47101ac070b0554}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+COLUMN\+\_\+\+COUNT}}~7
+\begin{DoxyCompactList}\small\item\em Number of columns in the {\ttfamily shgui} character grid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT}}~(\mbox{\hyperlink{shgui_8h_a93a3e3d7e1c9f5e0b4e7bf33ed312533}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+ROW\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shgui_8h_addd4fc144ef8c68df47101ac070b0554}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+COLUMN\+\_\+\+COUNT}})
+\begin{DoxyCompactList}\small\item\em Maximum number of vertices required to render a character in a {\ttfamily shgui} application. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a4b81cc241cba9d3054eb60a008f06fef}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+SIZE}}~(\mbox{\hyperlink{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} 3 \texorpdfstring{$\ast$}{*} 4)
+\begin{DoxyCompactList}\small\item\em Maximum size in bytes required to store character vertex data in a {\ttfamily shgui} application. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_aeba98d2d9b495cf8ff34881773dae0a5}{SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR
+\begin{DoxyCompactList}\small\item\em Macro alias of \+\_\+\+SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a5a144d14b096ced597d496ba7bd626e8}{SH\+\_\+\+GUI\+\_\+\+SUPPORTED\+\_\+\+CHAR\+\_\+\+COUNT}}~70
+\item 
+\#define \mbox{\hyperlink{shgui_8h_a3a8388255e3ce64dae017214d1884eea}{SH\+\_\+\+GUI\+\_\+\+SUPPORTED\+\_\+\+CHARS}}
+\item 
+\#define \mbox{\hyperlink{shgui_8h_a23f8f538ba75efc36f022a531aa6a2da}{SH\+\_\+\+GUI\+\_\+\+LOAD\+\_\+\+CHAR\+\_\+\+VERTICES}}(dst,  src)~    memcpy(dst, src, \mbox{\hyperlink{shgui_8h_a4b81cc241cba9d3054eb60a008f06fef}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+SIZE}})
+\begin{DoxyCompactList}\small\item\em Macro used to copy GUI character vertices from a source memory block to a destination. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw staging size (in bytes) for regions, equivalent to \doxylink{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_a072f09b6047aa85d165c13bb4302929b}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw staging size (in bytes) for characters, equivalent to \doxylink{shgui_8h_a072f09b6047aa85d165c13bb4302929b}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw staging size (in bytes) for character vertices, equivalent to \doxylink{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}~(0)
+\begin{DoxyCompactList}\small\item\em The offset for raw staging regions, set to 0. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}~(\mbox{\hyperlink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})
+\begin{DoxyCompactList}\small\item\em The offset for raw staging characters. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}~(\mbox{\hyperlink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})
+\begin{DoxyCompactList}\small\item\em The offset for raw staging character vertices. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}{SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE}}~(\mbox{\hyperlink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})
+\begin{DoxyCompactList}\small\item\em The total size of the staging buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_af1ac2e0d8095dc6e55b9450c5ce41e70}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw size (in bytes) for destination regions, equivalent to \doxylink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a0e1ca97b166bf10f245f217cb71d4880}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw size (in bytes) for destination characters, equivalent to \doxylink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_adeaac58689f60e3eb9a1cf54d2e8741f}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The raw size (in bytes) for destination character vertices, equivalent to \doxylink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a8182f6a14fda93b2449fae73300c869e}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET}}~\mbox{\hyperlink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}
+\begin{DoxyCompactList}\small\item\em The offset for destination regions, equivalent to \doxylink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a32f7d19d19f644fb0a1086b3c550c060}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET}}~\mbox{\hyperlink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}
+\begin{DoxyCompactList}\small\item\em The offset for destination characters, equivalent to \doxylink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ae56939ade6a21a28edd6df0bbd386b63}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET}}~\mbox{\hyperlink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}
+\begin{DoxyCompactList}\small\item\em The offset for destination character vertices, equivalent to \doxylink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a30dc21da6c2d11829d996525f16dac56}{SH\+\_\+\+GUI\+\_\+\+DST\+\_\+\+BUFFER\+\_\+\+SIZE}}~\mbox{\hyperlink{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}{SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em The total size of the destination buffer, equivalent to \doxylink{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}{SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a5add4b3d38279d526203c19f339e142c}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+VERT\+\_\+\+SPV}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+VERT\+\_\+\+SPV
+\begin{DoxyCompactList}\small\item\em Macro representing the SPIR-\/V code for the GUI region vertex shader. It is defined as the corresponding static constant. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a90511a3863b7b0c61f89aaace28ef5d2}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+FRAG\+\_\+\+SPV}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+FRAG\+\_\+\+SPV
+\begin{DoxyCompactList}\small\item\em Macro representing the SPIR-\/V code for the GUI region fragment shader. It is defined as the corresponding static constant. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a3b42506a62dfaf655b853d1911d9e79f}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+VERT\+\_\+\+SPV}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+VERT\+\_\+\+SPV
+\begin{DoxyCompactList}\small\item\em Macro representing the SPIR-\/V code for the GUI character vertex shader. It is defined as the corresponding static constant. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_ae22f14c985c200aecb8bc508fca51ff3}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+FRAG\+\_\+\+SPV}}~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+FRAG\+\_\+\+SPV
+\begin{DoxyCompactList}\small\item\em Macro representing the SPIR-\/V code for the GUI character fragment shader. It is defined as the corresponding static constant. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_aedae4a024a7e3481cebc0312408abb8e}{sh\+Allocate\+Gui}}()~((\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}}\texorpdfstring{$\ast$}{*})calloc(1, sizeof(\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}})))
+\begin{DoxyCompactList}\small\item\em Allocates memory for an instance of the \doxylink{struct_sh_gui}{Sh\+Gui} structure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_abe9560f976468057080c78dedbbbba3b}{SH\+\_\+\+GUI\+\_\+\+TEXT\+\_\+\+Z\+\_\+\+PRIORITY}}~0.\+0001f
+\begin{DoxyCompactList}\small\item\em The z-\/priority for text elements in the GUI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a4024073423f80863499398090326fe37}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+Z\+\_\+\+PRIORITY}}~0.\+0002f
+\begin{DoxyCompactList}\small\item\em The z-\/priority for region elements in the GUI. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{shgui_8h_a6b332f2d20ddd14e85853b5c4a7569d1}{SH\+\_\+\+GUI\+\_\+\+OUT\+\_\+\+OF\+\_\+\+CANVAS\+\_\+\+Z\+\_\+\+PRIORITY}}~1.\+0f
+\begin{DoxyCompactList}\small\item\em Z-\/axis priority value for out-\/of-\/canvas {\ttfamily shgui} elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}} \mbox{\hyperlink{shgui_8h_ae77d0043e2676ab820d239d91e7dae1a}{Sh\+Gui\+Core}}
+\item 
+typedef int8\+\_\+t \mbox{\hyperlink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}}\mbox{[}\mbox{\hyperlink{shgui_8h_ad963d28a02072b1a5f3a0ee531d25e1c}{SH\+\_\+\+GUI\+\_\+\+KEY\+\_\+\+LAST}}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em A memory block to represent and store {\ttfamily shgui} key events. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{shgui_8h_aac42692bf846c31d71b89bd5e89c30a1}{Sh\+Gui\+\_\+\+UTF32\+\_\+\+Char}}
+\begin{DoxyCompactList}\small\item\em Represents a Unicode character encoded in UTF-\/32 format. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}{Sh\+Gui\+Input\+Flags}} \mbox{\hyperlink{shgui_8h_a63f54c0b2ea2bc30c91e6be01a8fea35}{Sh\+Gui\+Input\+Flags}}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}} \mbox{\hyperlink{shgui_8h_af21e9a483acf02a77d02f08cd1084c84}{Sh\+Gui\+Inputs}}
+\item 
+typedef struct \mbox{\hyperlink{structshguivec2}{shguivec2}} \mbox{\hyperlink{shgui_8h_a6a1a2772493e3ff07a1a3306e35e97a2}{shguivec2}}
+\item 
+typedef struct \mbox{\hyperlink{structshguivec3}{shguivec3}} \mbox{\hyperlink{shgui_8h_a7e880e06ee42933ee84088a80ba2857f}{shguivec3}}
+\item 
+typedef struct \mbox{\hyperlink{structshguivec4}{shguivec4}} \mbox{\hyperlink{shgui_8h_a325fd2d177d0b82638f95c846a4ba7de}{shguivec4}}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \mbox{\hyperlink{shgui_8h_a96c05f2c7427b930eacca0119e26e795}{Sh\+Gui\+Region\+Raw}}
+\item 
+typedef enum \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_a7168e22037da7048c6520e85cf695924}{Sh\+Gui\+Region\+Raw\+Write\+Flags}}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}} \mbox{\hyperlink{shgui_8h_a74d6ac4ba6233a68cec9549680c8e054}{Sh\+Gui\+Region\+Infos}}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \mbox{\hyperlink{shgui_8h_a6e5869407d043aad59e8fe5673bbca3d}{Sh\+Gui\+Char\+Raw}}
+\item 
+typedef enum \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_af4cfc284383305f901dab9e31bb6ad6f}{Sh\+Gui\+Char\+Raw\+Write\+Flags}}
+\item 
+typedef float \mbox{\hyperlink{shgui_8h_aa3c1dd28d77fc2ffc98e3ab08ba108cf}{Sh\+Gui\+Char\+Vertex\+Raw}}\mbox{[}\mbox{\hyperlink{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Type for storing raw character vertex data in a {\ttfamily shgui} application. \end{DoxyCompactList}\item 
+typedef float \mbox{\hyperlink{shgui_8h_a9df9a648db55fa01ce26e2fc81028da1}{Sh\+Gui\+Char\+Mesh}}\mbox{[}49\mbox{]}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}} \mbox{\hyperlink{shgui_8h_a62b381c08e8fbe7467ac8b05bd572290}{Sh\+Gui\+Char\+Infos}}
+\item 
+typedef struct \mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \mbox{\hyperlink{shgui_8h_a00e46b1be1415e620c0379b7183a2fe6}{Sh\+Gui}}
+\item 
+typedef enum \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}} \mbox{\hyperlink{shgui_8h_a971ccf12b1eb4b7f32036f6601f02dca}{Sh\+Gui\+Widget\+Flags}}
+\item 
+typedef enum \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}{Sh\+Gui\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_a55db8d32791f0fa2a0f1988f4cac5721}{Sh\+Gui\+Write\+Flags}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}{Sh\+Gui\+Input\+Flags}} \{ \newline
+\mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af8d40427f0326bedeb943b90dc622eb0}{SH\+\_\+\+GUI\+\_\+\+CLICK\+\_\+\+ONCE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3abfbab7d756c4fac1ea3f92a5e841d3fe}{SH\+\_\+\+GUI\+\_\+\+CLICK\+\_\+\+REPEAT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af664c8041c3d24b5604a193b2282f00a}{SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+ONCE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ad804a40f55809cfa67fa24f0a141c8ee}{SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+REPEAT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ab874bc2fc9b5124c263bb102b7c8f8ef}{SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+MAX\+\_\+\+ENUM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for {\ttfamily shgui} input handling. These flags help control how input events, such as clicks and key presses, are processed. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} \{ \newline
+\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a4d6854d7a3d46d51c256de64e15d6223}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a81fd36e3498189e4e124583163fb93fd}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a67c7a0e523307e4a27ba1b5e01307726}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19ab2ca7600c471fb005eb804cdd6d6652c}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+POSITION}} = SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION \texorpdfstring{$\vert$}{|} SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION
+, \newline
+\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19adaad5af443895eff55175bae9e17bee4}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+SCALE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a498b627339d14f9cb1215168bceeea9e}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+SCALE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19adafa7386556c1602147e0a07137a8c14}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+SCALE}} = SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+SCALE \texorpdfstring{$\vert$}{|} SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+SCALE
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19ac0f29acb7830f62d7f469a22963a4af8}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+COLOR}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \newline
+\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a3578004f696e846666ff02ed16b42aad}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+EDGE\+\_\+\+COLOR}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a84a8952c8d7cc8a469bf3372e0c4eb0c}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Z\+\_\+\+PRIORITY}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19a78f3e6a6eebd07ec6b77c89bed78bf4d}{SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+MAX\+\_\+\+ENUM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for specifying raw write operations on {\ttfamily shgui} regions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}} \{ \newline
+\mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04a9e8780c0f1d6e15910d64fe05263fc1d}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae3a40be9a1c9b8281e4e60c328dae912}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04a3476f71408522d535badffbf06231941}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+POSITION}} = SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION \texorpdfstring{$\vert$}{|} SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION
+, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae854485dbedc8fee33d5c59160111852}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+SCALE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04a70247ed1143359ecb83b6d3233eb08ec}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Z\+\_\+\+PRIORITY}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04aba76a553ca82aa925d81453fbe51a3f4}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+COLOR}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04a8afb17a1593f3f2146c568f8050dd1a7}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+MAX\+\_\+\+ENUM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for specifying raw write operations on {\ttfamily shgui} characters. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}} \{ \newline
+\mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a904273812b5ee5576c4a0d9db53e0a70}{SH\+\_\+\+GUI\+\_\+\+CENTER\+\_\+\+WIDTH}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01afb648a930c3598a8f4f28379278d3f7b}{SH\+\_\+\+GUI\+\_\+\+CENTER\+\_\+\+HEIGHT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a873924271d75cf44e6115deae23155a6}{SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+LEFT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01aae3169438dda6cd814f2996026d7ed75}{SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+RIGHT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a0e0f828dbf352a4da6085454fe025224}{SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+TOP}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a5041f5efe1cf9841ae249621d8508332}{SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+BOTTOM}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01ac782c5b6d1a8a7e1b5ddde85eb2d0eca}{SH\+\_\+\+GUI\+\_\+\+PIXELS}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6
+, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4830e45ad979bd2f6310728db43aa2eb}{SH\+\_\+\+GUI\+\_\+\+RELATIVE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, \newline
+\mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4c95d55530f2d0f89762ae63974932a3}{SH\+\_\+\+GUI\+\_\+\+WIDGET\+\_\+\+FLAGS\+\_\+\+MAX\+\_\+\+ENUM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents different flags that can be used to configure a GUI widget. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}{Sh\+Gui\+Write\+Flags}} \{ \newline
+\mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6aa83c903abb74c0aab72c803734acbc8d}{SH\+\_\+\+GUI\+\_\+\+WIDTH}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6af99a77a1825406ae93ab75ab6badfe69}{SH\+\_\+\+GUI\+\_\+\+HEIGHT}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a1e084ce7a8a4c7ff50c92323887a435b}{SH\+\_\+\+GUI\+\_\+\+POSITION\+\_\+X}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a8df2922571a7a90591a33e6efbb99bca}{SH\+\_\+\+GUI\+\_\+\+POSITION\+\_\+Y}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6acbe072a8aac1484a75910622fac8e4e8}{SH\+\_\+\+GUI\+\_\+\+TITLE}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a711eab33fb56908b4df8b8e69d205413}{SH\+\_\+\+GUI\+\_\+\+WRITE\+\_\+\+FLAGS\+\_\+\+MAX\+\_\+\+ENUM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents different flags for writing specific properties of a GUI element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a6a143e521310c18566214bd5979a81e1}{sh\+Gui\+Init}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}} core)
+\begin{DoxyCompactList}\small\item\em Initializes the GUI with the provided {\ttfamily \doxylink{struct_sh_gui_core}{Sh\+Gui\+Core}} structure. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a52453bea0f771d063f9eff32311158ee}{sh\+Gui\+Set\+Surface}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, Vk\+Surface\+KHR surface)
+\begin{DoxyCompactList}\small\item\em Sets the Vulkan surface for the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_ac4149238a0577b942b1ded2c2703ddf9}{sh\+Gui\+Set\+Renderpass}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, Vk\+Render\+Pass renderpass)
+\begin{DoxyCompactList}\small\item\em Sets the Vulkan render pass for the GUI. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_af9ebb886cfa8e01160dd1c093ef3df26}{sh\+Gui\+Get\+Available\+Heap}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Returns the available heap size for allocating memory, taking in consideration the host heap memory (RAM) and the GPU heap memory (VRAM). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_abd1993e44d2cf04573e66cfd02a98fb8}{sh\+Gui\+Allocate\+Memory}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Allocates memory for the GUI components. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_ae479c4197e09fecd279f1d16438e4391}{sh\+Gui\+Read\+Binary}} (const char \texorpdfstring{$\ast$}{*}path, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+code\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Reads a binary file and returns the binary data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a33cbc466e9e476bbb573e99ca814cda8}{sh\+Gui\+Allocate\+Pipeline\+Resources}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t swapchain\+\_\+image\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Allocates resources for the GUI pipelines. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_af66d73a5b488af9c0941e06386891461}{sh\+Gui\+Build\+Region\+Pipeline}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, const char \texorpdfstring{$\ast$}{*}vertex\+\_\+shader\+\_\+path, const char \texorpdfstring{$\ast$}{*}fragment\+\_\+shader\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Builds the region pipeline using the provided vertex and fragment shader paths. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a98b278cecd8af517d5ae05406d3e61de}{sh\+Gui\+Build\+Char\+Pipeline}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, const char \texorpdfstring{$\ast$}{*}vertex\+\_\+shader\+\_\+path, const char \texorpdfstring{$\ast$}{*}fragment\+\_\+shader\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Builds the char pipeline using the provided vertex and fragment shader paths. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a146dc717bef3a5f08ca3188a0da5637f}{sh\+Gui\+Destroy\+Pipeline\+Resources}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Destroys the resources allocated for the GUI Vulkan pipelines. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a93ded455297322869e9c42ab4e00d63d}{sh\+Gui\+Destroy\+Pipelines}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Destroys the GUI Vulkan pipelines. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_af721c0d4b7fee360f542c155fa66225e}{sh\+Gui\+Write\+Memory}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, Vk\+Command\+Buffer transfer\+\_\+cmd\+\_\+buffer, uint8\+\_\+t begin\+\_\+cmd\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Writes memory to the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_aa3af600ca32b31b38921432b71a745b3}{sh\+Gui\+Resize\+Interface}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t last\+\_\+width, uint32\+\_\+t last\+\_\+height, uint32\+\_\+t current\+\_\+width, uint32\+\_\+t current\+\_\+height)
+\begin{DoxyCompactList}\small\item\em Resizes the GUI interface. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_ac44e13be5c48989e420218e1dd467897}{sh\+Gui\+Release\+Memory}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Releases the memory allocated for the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_aecd811e0d62c7500dc8cb86f75e4634b}{sh\+Gui\+Render}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, Vk\+Command\+Buffer cmd\+\_\+buffer, uint32\+\_\+t swapchain\+\_\+image\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Renders the GUI using the provided command buffer and swapchain image index. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a3c531649d79d3e4c4262898161a3aaf3}{sh\+Gui\+Submit\+Inputs}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Submits the recorded inputs to the main \doxylink{struct_sh_gui}{Sh\+Gui} handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a609c7b08fddd09c7885395decf4a4e96}{sh\+Gui\+Release}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Releases the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a9b1a4921e32015a39728451daf944b0e}{sh\+Gui\+Link\+Inputs}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+window\+\_\+width, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+window\+\_\+height, float \texorpdfstring{$\ast$}{*}p\+\_\+cursor\+\_\+pos\+\_\+x, float \texorpdfstring{$\ast$}{*}p\+\_\+cursor\+\_\+pos\+\_\+y, \mbox{\hyperlink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}} key\+\_\+events, \mbox{\hyperlink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}} last\+\_\+key\+\_\+events, double \texorpdfstring{$\ast$}{*}p\+\_\+delta\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Links the inputs to the \doxylink{struct_sh_gui}{Sh\+Gui} handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a8b3bc79cd9cb70483d361bba0c337615}{sh\+Gui\+Reset\+Inputs}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Resets the GUI inputs. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_ab7eef3f9e147fd4102686d6317796abd}{sh\+Gui\+Update\+Inputs}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui)
+\begin{DoxyCompactList}\small\item\em Updates the GUI inputs. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a8f856bc2003792b4f495c4e06bb988ad}{sh\+Gui\+Scale\+UI}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, float region\+\_\+scaling\+\_\+factor, float char\+\_\+scaling\+\_\+factor)
+\begin{DoxyCompactList}\small\item\em Scales the UI of the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_af689a8711e8b353a6fc8cda0c39097d6}{sh\+Gui\+Region}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, \mbox{\hyperlink{structshguivec2}{shguivec2}} position\+\_\+zero, \mbox{\hyperlink{structshguivec2}{shguivec2}} scale\+\_\+zero, \mbox{\hyperlink{structshguivec4}{shguivec4}} fill\+\_\+color\+\_\+zero, \mbox{\hyperlink{structshguivec4}{shguivec4}} edge\+\_\+fill\+\_\+color\+\_\+zero, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}} flags)
+\begin{DoxyCompactList}\small\item\em Creates a region in the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a9dd2b1117c70f24a1c9419d31e3a3851}{sh\+Gui\+Overwrite\+Region}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t region\+\_\+idx, \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \texorpdfstring{$\ast$}{*}p\+\_\+src\+\_\+data, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} flags)
+\begin{DoxyCompactList}\small\item\em Overwrites a region in the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_acc9092658461c25ba25153c8664f16c1}{sh\+Gui\+Overwrite\+Regions}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t first\+\_\+region, uint32\+\_\+t region\+\_\+count, \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \texorpdfstring{$\ast$}{*}p\+\_\+src\+\_\+data, \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} flags)
+\begin{DoxyCompactList}\small\item\em Overwrites multiple regions in the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a72ab2169348cbc3f4637b85bb2434df0}{sh\+Gui\+Text\+Line\+Count}} (const char \texorpdfstring{$\ast$}{*}s\+\_\+text, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Counts the number of lines in a string. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_ae1e1b1e3ae2c8bfa4482f9a74b759033}{sh\+Gui\+Text}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, \mbox{\hyperlink{structshguivec2}{shguivec2}} position\+\_\+zero, \mbox{\hyperlink{structshguivec4}{shguivec4}} fill\+\_\+color\+\_\+zero, float scale\+\_\+zero\+\_\+pixels, char \texorpdfstring{$\ast$}{*}s\+\_\+text, \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}} flags)
+\begin{DoxyCompactList}\small\item\em Renders text in the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_ac86454d2a0765c1a715829425bee38fc}{sh\+Gui\+Overwrite\+Char}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t char\+\_\+idx, \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \texorpdfstring{$\ast$}{*}p\+\_\+src\+\_\+data, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}} flags)
+\begin{DoxyCompactList}\small\item\em Overwrites a character in the GUI. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} \mbox{\hyperlink{shgui_8h_a40e55ab9107287ba86c7afbefc3cbfb6}{sh\+Gui\+Overwrite\+Chars}} (\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}p\+\_\+gui, uint32\+\_\+t first\+\_\+char, uint32\+\_\+t char\+\_\+count, \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \texorpdfstring{$\ast$}{*}p\+\_\+src\+\_\+data, \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}} flags)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}\label{shgui_8h_a90c5d337ca88985682dbae705e3e77c5} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CALL@{SH\_GUI\_CALL}}
+\index{SH\_GUI\_CALL@{SH\_GUI\_CALL}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CALL}{SH\_GUI\_CALL}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CALL}
+
+\Hypertarget{shgui_8h_addd4fc144ef8c68df47101ac070b0554}\label{shgui_8h_addd4fc144ef8c68df47101ac070b0554} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_COLUMN\_COUNT@{SH\_GUI\_CHAR\_COLUMN\_COUNT}}
+\index{SH\_GUI\_CHAR\_COLUMN\_COUNT@{SH\_GUI\_CHAR\_COLUMN\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHAR\_COLUMN\_COUNT}{SH\_GUI\_CHAR\_COLUMN\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+COLUMN\+\_\+\+COUNT~7}
+
+
+
+Number of columns in the {\ttfamily shgui} character grid. 
+
+This constant defines the number of columns in the {\ttfamily shgui} character grid. It determines the horizontal size of the grid used for rendering characters in {\ttfamily shgui}. \Hypertarget{shgui_8h_ae22f14c985c200aecb8bc508fca51ff3}\label{shgui_8h_ae22f14c985c200aecb8bc508fca51ff3} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_FRAG\_SPV@{SH\_GUI\_CHAR\_FRAG\_SPV}}
+\index{SH\_GUI\_CHAR\_FRAG\_SPV@{SH\_GUI\_CHAR\_FRAG\_SPV}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHAR\_FRAG\_SPV}{SH\_GUI\_CHAR\_FRAG\_SPV}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+FRAG\+\_\+\+SPV~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+FRAG\+\_\+\+SPV}
+
+
+
+Macro representing the SPIR-\/V code for the GUI character fragment shader. It is defined as the corresponding static constant. 
+
+\Hypertarget{shgui_8h_a93a3e3d7e1c9f5e0b4e7bf33ed312533}\label{shgui_8h_a93a3e3d7e1c9f5e0b4e7bf33ed312533} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_ROW\_COUNT@{SH\_GUI\_CHAR\_ROW\_COUNT}}
+\index{SH\_GUI\_CHAR\_ROW\_COUNT@{SH\_GUI\_CHAR\_ROW\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHAR\_ROW\_COUNT}{SH\_GUI\_CHAR\_ROW\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+ROW\+\_\+\+COUNT~7}
+
+
+
+Number of rows in the {\ttfamily shgui} character grid. 
+
+This constant defines the number of rows in the {\ttfamily shgui} character grid. It determines the vertical size of the grid used for rendering characters in {\ttfamily shgui}. \Hypertarget{shgui_8h_a3b42506a62dfaf655b853d1911d9e79f}\label{shgui_8h_a3b42506a62dfaf655b853d1911d9e79f} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_VERT\_SPV@{SH\_GUI\_CHAR\_VERT\_SPV}}
+\index{SH\_GUI\_CHAR\_VERT\_SPV@{SH\_GUI\_CHAR\_VERT\_SPV}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHAR\_VERT\_SPV}{SH\_GUI\_CHAR\_VERT\_SPV}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+VERT\+\_\+\+SPV~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+VERT\+\_\+\+SPV}
+
+
+
+Macro representing the SPIR-\/V code for the GUI character vertex shader. It is defined as the corresponding static constant. 
+
+\Hypertarget{shgui_8h_a32f7d19d19f644fb0a1086b3c550c060}\label{shgui_8h_a32f7d19d19f644fb0a1086b3c550c060} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_RAW\_DST\_OFFSET@{SH\_GUI\_CHARS\_RAW\_DST\_OFFSET}}
+\index{SH\_GUI\_CHARS\_RAW\_DST\_OFFSET@{SH\_GUI\_CHARS\_RAW\_DST\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_RAW\_DST\_OFFSET}{SH\_GUI\_CHARS\_RAW\_DST\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET~\mbox{\hyperlink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}}
+
+
+
+The offset for destination characters, equivalent to \doxylink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. 
+
+\Hypertarget{shgui_8h_a0e1ca97b166bf10f245f217cb71d4880}\label{shgui_8h_a0e1ca97b166bf10f245f217cb71d4880} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_RAW\_DST\_SIZE@{SH\_GUI\_CHARS\_RAW\_DST\_SIZE}}
+\index{SH\_GUI\_CHARS\_RAW\_DST\_SIZE@{SH\_GUI\_CHARS\_RAW\_DST\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_RAW\_DST\_SIZE}{SH\_GUI\_CHARS\_RAW\_DST\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}}
+
+
+
+The raw size (in bytes) for destination characters, equivalent to \doxylink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}\label{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET@{SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET}}
+\index{SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET@{SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET}{SH\_GUI\_CHARS\_RAW\_STAGING\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET~(\mbox{\hyperlink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})}
+
+
+
+The offset for raw staging characters. 
+
+\Hypertarget{shgui_8h_a51010a400aa770864d114abfb8b41622}\label{shgui_8h_a51010a400aa770864d114abfb8b41622} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE@{SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE}}
+\index{SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE@{SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE}{SH\_GUI\_CHARS\_RAW\_STAGING\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_a072f09b6047aa85d165c13bb4302929b}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE}}}
+
+
+
+The raw staging size (in bytes) for characters, equivalent to \doxylink{shgui_8h_a072f09b6047aa85d165c13bb4302929b}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_ae56939ade6a21a28edd6df0bbd386b63}\label{shgui_8h_ae56939ade6a21a28edd6df0bbd386b63} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET@{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET}}
+\index{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET@{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET}{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET~\mbox{\hyperlink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}}
+
+
+
+The offset for destination character vertices, equivalent to \doxylink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. 
+
+\Hypertarget{shgui_8h_adeaac58689f60e3eb9a1cf54d2e8741f}\label{shgui_8h_adeaac58689f60e3eb9a1cf54d2e8741f} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE@{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE}}
+\index{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE@{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE}{SH\_GUI\_CHARS\_VERTEX\_RAW\_DST\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}}
+
+
+
+The raw size (in bytes) for destination character vertices, equivalent to \doxylink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_a05a9021eff100711687616a85c3f29fa}\label{shgui_8h_a05a9021eff100711687616a85c3f29fa} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET@{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET}}
+\index{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET@{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET}{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET~(\mbox{\hyperlink{shgui_8h_ab4dc7edb3d20d76a9ed5177590e5c732}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_a51010a400aa770864d114abfb8b41622}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})}
+
+
+
+The offset for raw staging character vertices. 
+
+\Hypertarget{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}\label{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE@{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE}}
+\index{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE@{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE}{SH\_GUI\_CHARS\_VERTEX\_RAW\_STAGING\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE}}}
+
+
+
+The raw staging size (in bytes) for character vertices, equivalent to \doxylink{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_aca6d17443ff40992fef7c1fd56ffcbd0}\label{shgui_8h_aca6d17443ff40992fef7c1fd56ffcbd0} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_BLACK@{SH\_GUI\_COLOR\_BLACK}}
+\index{SH\_GUI\_COLOR\_BLACK@{SH\_GUI\_COLOR\_BLACK}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_BLACK}{SH\_GUI\_COLOR\_BLACK}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+BLACK~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f \}}
+
+
+
+Color constant representing black. 
+
+\Hypertarget{shgui_8h_a15a60674c2fc127127168fdcaddb4f57}\label{shgui_8h_a15a60674c2fc127127168fdcaddb4f57} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_BLUE@{SH\_GUI\_COLOR\_BLUE}}
+\index{SH\_GUI\_COLOR\_BLUE@{SH\_GUI\_COLOR\_BLUE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_BLUE}{SH\_GUI\_COLOR\_BLUE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+BLUE~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 0.\+0f, 1.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing blue. 
+
+\Hypertarget{shgui_8h_ac4c02963bdf2762b7acad2a5a8d2ad99}\label{shgui_8h_ac4c02963bdf2762b7acad2a5a8d2ad99} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_CYAN@{SH\_GUI\_COLOR\_CYAN}}
+\index{SH\_GUI\_COLOR\_CYAN@{SH\_GUI\_COLOR\_CYAN}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_CYAN}{SH\_GUI\_COLOR\_CYAN}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+CYAN~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 1.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing cyan. 
+
+\Hypertarget{shgui_8h_a722f2981a79d63aa1df756db30c1706f}\label{shgui_8h_a722f2981a79d63aa1df756db30c1706f} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_GREEN@{SH\_GUI\_COLOR\_GREEN}}
+\index{SH\_GUI\_COLOR\_GREEN@{SH\_GUI\_COLOR\_GREEN}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_GREEN}{SH\_GUI\_COLOR\_GREEN}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+GREEN~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+0f, 1.\+0f, 0.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing green. 
+
+\Hypertarget{shgui_8h_a23250eff24457584cc8b8656becd20c7}\label{shgui_8h_a23250eff24457584cc8b8656becd20c7} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_GREY@{SH\_GUI\_COLOR\_GREY}}
+\index{SH\_GUI\_COLOR\_GREY@{SH\_GUI\_COLOR\_GREY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_GREY}{SH\_GUI\_COLOR\_GREY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+GREY~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 0.\+5f, 0.\+5f, 0.\+5f \}}
+
+
+
+Color constant representing grey. 
+
+\Hypertarget{shgui_8h_ab637c8171a8ae93574f9348e367957ba}\label{shgui_8h_ab637c8171a8ae93574f9348e367957ba} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_MAGENTA@{SH\_GUI\_COLOR\_MAGENTA}}
+\index{SH\_GUI\_COLOR\_MAGENTA@{SH\_GUI\_COLOR\_MAGENTA}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_MAGENTA}{SH\_GUI\_COLOR\_MAGENTA}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+MAGENTA~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 0.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing magenta. 
+
+\Hypertarget{shgui_8h_a70f23061128777d2086ef87a5e8c3ec5}\label{shgui_8h_a70f23061128777d2086ef87a5e8c3ec5} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_RED@{SH\_GUI\_COLOR\_RED}}
+\index{SH\_GUI\_COLOR\_RED@{SH\_GUI\_COLOR\_RED}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_RED}{SH\_GUI\_COLOR\_RED}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+RED~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 0.\+0f, 0.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing red. 
+
+\Hypertarget{shgui_8h_a611e881b86790f284171a9d5263b58d5}\label{shgui_8h_a611e881b86790f284171a9d5263b58d5} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_WHITE@{SH\_GUI\_COLOR\_WHITE}}
+\index{SH\_GUI\_COLOR\_WHITE@{SH\_GUI\_COLOR\_WHITE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_WHITE}{SH\_GUI\_COLOR\_WHITE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+WHITE~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 1.\+0f, 1.\+0f, 1.\+0f \}}
+
+
+
+Color constant representing white. 
+
+\Hypertarget{shgui_8h_a48f355c4e30f9d009f01f6c307d0ea04}\label{shgui_8h_a48f355c4e30f9d009f01f6c307d0ea04} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_COLOR\_YELLOW@{SH\_GUI\_COLOR\_YELLOW}}
+\index{SH\_GUI\_COLOR\_YELLOW@{SH\_GUI\_COLOR\_YELLOW}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_COLOR\_YELLOW}{SH\_GUI\_COLOR\_YELLOW}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+COLOR\+\_\+\+YELLOW~(\mbox{\hyperlink{structshguivec4}{shguivec4}})\{ 1.\+0f, 1.\+0f, 0.\+0f \}}
+
+
+
+Color constant representing yellow. 
+
+\Hypertarget{shgui_8h_a30dc21da6c2d11829d996525f16dac56}\label{shgui_8h_a30dc21da6c2d11829d996525f16dac56} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_DST\_BUFFER\_SIZE@{SH\_GUI\_DST\_BUFFER\_SIZE}}
+\index{SH\_GUI\_DST\_BUFFER\_SIZE@{SH\_GUI\_DST\_BUFFER\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_DST\_BUFFER\_SIZE}{SH\_GUI\_DST\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+DST\+\_\+\+BUFFER\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}{SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE}}}
+
+
+
+The total size of the destination buffer, equivalent to \doxylink{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}{SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_ad963d28a02072b1a5f3a0ee531d25e1c}\label{shgui_8h_ad963d28a02072b1a5f3a0ee531d25e1c} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_KEY\_LAST@{SH\_GUI\_KEY\_LAST}}
+\index{SH\_GUI\_KEY\_LAST@{SH\_GUI\_KEY\_LAST}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_KEY\_LAST}{SH\_GUI\_KEY\_LAST}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+KEY\+\_\+\+LAST~348}
+
+
+
+The last valid key event code in the {\ttfamily shgui} library. 
+
+This constant represents the highest valid key event code within the {\ttfamily shgui} library. Key event codes are typically used to identify and handle keyboard input in {\ttfamily shgui} applications. \Hypertarget{shgui_8h_a23f8f538ba75efc36f022a531aa6a2da}\label{shgui_8h_a23f8f538ba75efc36f022a531aa6a2da} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_LOAD\_CHAR\_VERTICES@{SH\_GUI\_LOAD\_CHAR\_VERTICES}}
+\index{SH\_GUI\_LOAD\_CHAR\_VERTICES@{SH\_GUI\_LOAD\_CHAR\_VERTICES}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_LOAD\_CHAR\_VERTICES}{SH\_GUI\_LOAD\_CHAR\_VERTICES}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+LOAD\+\_\+\+CHAR\+\_\+\+VERTICES(\begin{DoxyParamCaption}\item[{}]{dst,  }\item[{}]{src }\end{DoxyParamCaption})~    memcpy(dst, src, \mbox{\hyperlink{shgui_8h_a4b81cc241cba9d3054eb60a008f06fef}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+SIZE}})}
+
+
+
+Macro used to copy GUI character vertices from a source memory block to a destination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination array where character vertices will be copied. \\
+\hline
+{\em src} & The source array containing the original character vertices. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}\label{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_CHAR\_COUNT@{SH\_GUI\_MAX\_CHAR\_COUNT}}
+\index{SH\_GUI\_MAX\_CHAR\_COUNT@{SH\_GUI\_MAX\_CHAR\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_CHAR\_COUNT}{SH\_GUI\_MAX\_CHAR\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT~2048}
+
+
+
+The maximum number of characters supported by the GUI. 
+
+\Hypertarget{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}\label{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT@{SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT}}
+\index{SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT@{SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT}{SH\_GUI\_MAX\_CHAR\_VERTEX\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT~(\mbox{\hyperlink{shgui_8h_a93a3e3d7e1c9f5e0b4e7bf33ed312533}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+ROW\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shgui_8h_addd4fc144ef8c68df47101ac070b0554}{SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+COLUMN\+\_\+\+COUNT}})}
+
+
+
+Maximum number of vertices required to render a character in a {\ttfamily shgui} application. 
+
+The {\ttfamily SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT} macro defines the maximum number of vertices required to render a character in a {\ttfamily shgui} application. It is calculated as 7x7 vertices, which corresponds to a 7x7 grid for character rendering. \Hypertarget{shgui_8h_a4b81cc241cba9d3054eb60a008f06fef}\label{shgui_8h_a4b81cc241cba9d3054eb60a008f06fef} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE@{SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE}}
+\index{SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE@{SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE}{SH\_GUI\_MAX\_CHAR\_VERTEX\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+SIZE~(\mbox{\hyperlink{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} 3 \texorpdfstring{$\ast$}{*} 4)}
+
+
+
+Maximum size in bytes required to store character vertex data in a {\ttfamily shgui} application. 
+
+The {\ttfamily SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+SIZE} macro defines the maximum size, in bytes, required to store character vertex data in a {\ttfamily shgui} application. It is calculated as the product of \doxylink{shgui_8h_a23fc6656fadda5b3736d035c107f5c8d}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+VERTEX\+\_\+\+COUNT}, 3 components per vertex (x, y, z-\/priority), and 4 bytes per component. \Hypertarget{shgui_8h_a072f09b6047aa85d165c13bb4302929b}\label{shgui_8h_a072f09b6047aa85d165c13bb4302929b} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_CHARS\_RAW\_SIZE@{SH\_GUI\_MAX\_CHARS\_RAW\_SIZE}}
+\index{SH\_GUI\_MAX\_CHARS\_RAW\_SIZE@{SH\_GUI\_MAX\_CHARS\_RAW\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_CHARS\_RAW\_SIZE}{SH\_GUI\_MAX\_CHARS\_RAW\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+RAW\+\_\+\+SIZE~(\mbox{\hyperlink{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}}))}
+
+
+
+The raw size (in bytes) required to store the maximum number of characters. 
+
+\Hypertarget{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29}\label{shgui_8h_ab59f9ce6ba7e27aef4387426d7c2eb29} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE@{SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE}}
+\index{SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE@{SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE}{SH\_GUI\_MAX\_CHARS\_VERTEX\_RAW\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+SIZE~(\mbox{\hyperlink{shgui_8h_a4a24f48248ddbd2bfefb10795c5cda9e}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+CHAR\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{shgui_8h_aa3c1dd28d77fc2ffc98e3ab08ba108cf}{Sh\+Gui\+Char\+Vertex\+Raw}}))}
+
+
+
+The raw size (in bytes) required to store the maximum number of character vertices. 
+
+\Hypertarget{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}\label{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_REGION\_COUNT@{SH\_GUI\_MAX\_REGION\_COUNT}}
+\index{SH\_GUI\_MAX\_REGION\_COUNT@{SH\_GUI\_MAX\_REGION\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_REGION\_COUNT}{SH\_GUI\_MAX\_REGION\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT~1024}
+
+
+
+Maximum number of regions supported in a {\ttfamily shgui} application. 
+
+\Hypertarget{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}\label{shgui_8h_a565639b02d4e3da35fb500cf20450cf4} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE@{SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE}}
+\index{SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE@{SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE}{SH\_GUI\_MAX\_REGIONS\_RAW\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE~(\mbox{\hyperlink{shgui_8h_ae95364c1b8e15e44bfecc7f6ba0d44e7}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGION\+\_\+\+COUNT}} \texorpdfstring{$\ast$}{*} sizeof(\mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}}))}
+
+
+
+Maximum size in bytes for raw region data in a {\ttfamily shgui} application. 
+
+\Hypertarget{shgui_8h_aeba98d2d9b495cf8ff34881773dae0a5}\label{shgui_8h_aeba98d2d9b495cf8ff34881773dae0a5} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_NO\_CHAR@{SH\_GUI\_NO\_CHAR}}
+\index{SH\_GUI\_NO\_CHAR@{SH\_GUI\_NO\_CHAR}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_NO\_CHAR}{SH\_GUI\_NO\_CHAR}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR}
+
+
+
+Macro alias of \+\_\+\+SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+CHAR. 
+
+\Hypertarget{shgui_8h_a1abb4b4b5fcb9c2575a66e66f4611f94}\label{shgui_8h_a1abb4b4b5fcb9c2575a66e66f4611f94} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_NO\_KEY@{SH\_GUI\_NO\_KEY}}
+\index{SH\_GUI\_NO\_KEY@{SH\_GUI\_NO\_KEY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_NO\_KEY}{SH\_GUI\_NO\_KEY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+NO\+\_\+\+KEY~UINT8\+\_\+\+MAX}
+
+
+
+A constant representing the absence of a key event. 
+
+\Hypertarget{shgui_8h_a6b332f2d20ddd14e85853b5c4a7569d1}\label{shgui_8h_a6b332f2d20ddd14e85853b5c4a7569d1} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY@{SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY}}
+\index{SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY@{SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY}{SH\_GUI\_OUT\_OF\_CANVAS\_Z\_PRIORITY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+OUT\+\_\+\+OF\+\_\+\+CANVAS\+\_\+\+Z\+\_\+\+PRIORITY~1.\+0f}
+
+
+
+Z-\/axis priority value for out-\/of-\/canvas {\ttfamily shgui} elements. 
+
+This constant defines the Z-\/axis priority value assigned to {\ttfamily shgui} elements that are positioned outside the visible canvas. It is used to determine the rendering order and priority for elements that extend beyond the canvas boundaries along the Z-\/axis.
+
+The higher the Z-\/axis priority value, the more emphasis will be given to rendering these out-\/of-\/canvas elements. Adjust this value to control the rendering behavior of elements positioned outside the visible canvas along the Z-\/axis. \Hypertarget{shgui_8h_a90511a3863b7b0c61f89aaace28ef5d2}\label{shgui_8h_a90511a3863b7b0c61f89aaace28ef5d2} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_FRAG\_SPV@{SH\_GUI\_REGION\_FRAG\_SPV}}
+\index{SH\_GUI\_REGION\_FRAG\_SPV@{SH\_GUI\_REGION\_FRAG\_SPV}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGION\_FRAG\_SPV}{SH\_GUI\_REGION\_FRAG\_SPV}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+FRAG\+\_\+\+SPV~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+FRAG\+\_\+\+SPV}
+
+
+
+Macro representing the SPIR-\/V code for the GUI region fragment shader. It is defined as the corresponding static constant. 
+
+\Hypertarget{shgui_8h_a5add4b3d38279d526203c19f339e142c}\label{shgui_8h_a5add4b3d38279d526203c19f339e142c} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_VERT\_SPV@{SH\_GUI\_REGION\_VERT\_SPV}}
+\index{SH\_GUI\_REGION\_VERT\_SPV@{SH\_GUI\_REGION\_VERT\_SPV}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGION\_VERT\_SPV}{SH\_GUI\_REGION\_VERT\_SPV}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+VERT\+\_\+\+SPV~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+VERT\+\_\+\+SPV}
+
+
+
+Macro representing the SPIR-\/V code for the GUI region vertex shader. It is defined as the corresponding static constant. 
+
+\Hypertarget{shgui_8h_a4024073423f80863499398090326fe37}\label{shgui_8h_a4024073423f80863499398090326fe37} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_Z\_PRIORITY@{SH\_GUI\_REGION\_Z\_PRIORITY}}
+\index{SH\_GUI\_REGION\_Z\_PRIORITY@{SH\_GUI\_REGION\_Z\_PRIORITY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGION\_Z\_PRIORITY}{SH\_GUI\_REGION\_Z\_PRIORITY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+Z\+\_\+\+PRIORITY~0.\+0002f}
+
+
+
+The z-\/priority for region elements in the GUI. 
+
+This macro defines the z-\/priority for region elements in the GUI, which determines their rendering order. Smaller values indicate elements that should be rendered closer to the viewer, and have a higher priority over other UI elements. \Hypertarget{shgui_8h_a8182f6a14fda93b2449fae73300c869e}\label{shgui_8h_a8182f6a14fda93b2449fae73300c869e} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET@{SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET}}
+\index{SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET@{SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET}{SH\_GUI\_REGIONS\_RAW\_DST\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+OFFSET~\mbox{\hyperlink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}}}
+
+
+
+The offset for destination regions, equivalent to \doxylink{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}. 
+
+\Hypertarget{shgui_8h_af1ac2e0d8095dc6e55b9450c5ce41e70}\label{shgui_8h_af1ac2e0d8095dc6e55b9450c5ce41e70} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGIONS\_RAW\_DST\_SIZE@{SH\_GUI\_REGIONS\_RAW\_DST\_SIZE}}
+\index{SH\_GUI\_REGIONS\_RAW\_DST\_SIZE@{SH\_GUI\_REGIONS\_RAW\_DST\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGIONS\_RAW\_DST\_SIZE}{SH\_GUI\_REGIONS\_RAW\_DST\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+DST\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}}}
+
+
+
+The raw size (in bytes) for destination regions, equivalent to \doxylink{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}{SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_a0b457acfb16d67f1958108ccaeed794a}\label{shgui_8h_a0b457acfb16d67f1958108ccaeed794a} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET@{SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET}}
+\index{SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET@{SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET}{SH\_GUI\_REGIONS\_RAW\_STAGING\_OFFSET}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET~(0)}
+
+
+
+The offset for raw staging regions, set to 0. 
+
+\Hypertarget{shgui_8h_a4d2120caffad9ee1bf811a19eea37269}\label{shgui_8h_a4d2120caffad9ee1bf811a19eea37269} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE@{SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE}}
+\index{SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE@{SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE}{SH\_GUI\_REGIONS\_RAW\_STAGING\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE~\mbox{\hyperlink{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE}}}
+
+
+
+The raw staging size (in bytes) for regions, equivalent to \doxylink{shgui_8h_a565639b02d4e3da35fb500cf20450cf4}{SH\+\_\+\+GUI\+\_\+\+MAX\+\_\+\+REGIONS\+\_\+\+RAW\+\_\+\+SIZE}. 
+
+\Hypertarget{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f}\label{shgui_8h_aeeb883db8b5c074015f5b485669d8e6f} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_STAGING\_BUFFER\_SIZE@{SH\_GUI\_STAGING\_BUFFER\_SIZE}}
+\index{SH\_GUI\_STAGING\_BUFFER\_SIZE@{SH\_GUI\_STAGING\_BUFFER\_SIZE}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_STAGING\_BUFFER\_SIZE}{SH\_GUI\_STAGING\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+STAGING\+\_\+\+BUFFER\+\_\+\+SIZE~(\mbox{\hyperlink{shgui_8h_a05a9021eff100711687616a85c3f29fa}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+OFFSET}} + \mbox{\hyperlink{shgui_8h_ae080d7a135d5a7fb3a1715100d3bfc94}{SH\+\_\+\+GUI\+\_\+\+CHARS\+\_\+\+VERTEX\+\_\+\+RAW\+\_\+\+STAGING\+\_\+\+SIZE}})}
+
+
+
+The total size of the staging buffer. 
+
+\Hypertarget{shgui_8h_a129d0fea58bef41ded95cae4f008a8b0}\label{shgui_8h_a129d0fea58bef41ded95cae4f008a8b0} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_STRUCTURE\_ZERO@{SH\_GUI\_STRUCTURE\_ZERO}}
+\index{SH\_GUI\_STRUCTURE\_ZERO@{SH\_GUI\_STRUCTURE\_ZERO}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_STRUCTURE\_ZERO}{SH\_GUI\_STRUCTURE\_ZERO}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+STRUCTURE\+\_\+\+ZERO~\{ 0 \}}
+
+\Hypertarget{shgui_8h_a5a144d14b096ced597d496ba7bd626e8}\label{shgui_8h_a5a144d14b096ced597d496ba7bd626e8} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_SUPPORTED\_CHAR\_COUNT@{SH\_GUI\_SUPPORTED\_CHAR\_COUNT}}
+\index{SH\_GUI\_SUPPORTED\_CHAR\_COUNT@{SH\_GUI\_SUPPORTED\_CHAR\_COUNT}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_SUPPORTED\_CHAR\_COUNT}{SH\_GUI\_SUPPORTED\_CHAR\_COUNT}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+SUPPORTED\+\_\+\+CHAR\+\_\+\+COUNT~70}
+
+\Hypertarget{shgui_8h_a3a8388255e3ce64dae017214d1884eea}\label{shgui_8h_a3a8388255e3ce64dae017214d1884eea} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_SUPPORTED\_CHARS@{SH\_GUI\_SUPPORTED\_CHARS}}
+\index{SH\_GUI\_SUPPORTED\_CHARS@{SH\_GUI\_SUPPORTED\_CHARS}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_SUPPORTED\_CHARS}{SH\_GUI\_SUPPORTED\_CHARS}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+SUPPORTED\+\_\+\+CHARS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{'a'},\ \textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'c'},\ \textcolor{charliteral}{'d'},\ \textcolor{charliteral}{'e'},\ \textcolor{charliteral}{'f'},\ \textcolor{charliteral}{'g'},\ \textcolor{charliteral}{'h'},\ \textcolor{charliteral}{'i'},\ \textcolor{charliteral}{'j'},\ \textcolor{charliteral}{'k'},\ \textcolor{charliteral}{'l'},\ \textcolor{charliteral}{'m'},\ \textcolor{charliteral}{'n'},\ \textcolor{charliteral}{'o'},\ \textcolor{charliteral}{'p'},\ \textcolor{charliteral}{'q'},\ \textcolor{charliteral}{'r'},\ \textcolor{charliteral}{'s'},\ \textcolor{charliteral}{'t'},\ \textcolor{charliteral}{'u'},\ \textcolor{charliteral}{'v'},\ \textcolor{charliteral}{'w'},\ \textcolor{charliteral}{'x'},\ \textcolor{charliteral}{'y'},\ \textcolor{charliteral}{'z'},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{'0'},\ \textcolor{charliteral}{'1'},\ \textcolor{charliteral}{'2'},\ \textcolor{charliteral}{'3'},\ \textcolor{charliteral}{'4'},\ \textcolor{charliteral}{'5'},\ \textcolor{charliteral}{'6'},\ \textcolor{charliteral}{'7'},\ \textcolor{charliteral}{'8'},\ \textcolor{charliteral}{'9'},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{'\ '},\ \textcolor{charliteral}{'\(\backslash\)t'},\ \textcolor{charliteral}{'\(\backslash\)n'},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{charliteral}{'.'},\ \textcolor{charliteral}{','},\ \textcolor{charliteral}{'!'},\ \textcolor{charliteral}{'?'},\ \textcolor{charliteral}{':'},\ \textcolor{charliteral}{';'},\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{charliteral}{'\_'},\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'|'},\ \textcolor{charliteral}{'\&'},\ \textcolor{charliteral}{'\%'},\ \textcolor{charliteral}{'\$'},\ \textcolor{charliteral}{'\#'},\ \textcolor{charliteral}{'@'},\ \textcolor{charliteral}{'\(\backslash\)''},\ \textcolor{charliteral}{'"{}'},\ \textcolor{charliteral}{'+'},\ \textcolor{charliteral}{'-\/'},\ \textcolor{charliteral}{'*'},\ \textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'='},\ \textcolor{charliteral}{'<'},\ \textcolor{charliteral}{'>'},\ \textcolor{charliteral}{'('},\ \textcolor{charliteral}{')'},\ \textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'},\ \textcolor{charliteral}{'\string~'},\ \textcolor{charliteral}{'`'}\(\backslash\)}
+
+\end{DoxyCode}
+\Hypertarget{shgui_8h_abe9560f976468057080c78dedbbbba3b}\label{shgui_8h_abe9560f976468057080c78dedbbbba3b} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_TEXT\_Z\_PRIORITY@{SH\_GUI\_TEXT\_Z\_PRIORITY}}
+\index{SH\_GUI\_TEXT\_Z\_PRIORITY@{SH\_GUI\_TEXT\_Z\_PRIORITY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_TEXT\_Z\_PRIORITY}{SH\_GUI\_TEXT\_Z\_PRIORITY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+TEXT\+\_\+\+Z\+\_\+\+PRIORITY~0.\+0001f}
+
+
+
+The z-\/priority for text elements in the GUI. 
+
+This macro defines the z-\/priority for text elements in the GUI, which determines their rendering order. Smaller values indicate elements that should be rendered closer to the viewer, and have a higher priority over other UI elements. \Hypertarget{shgui_8h_a55b882c68c1a5b8b7433d478ff6e31f8}\label{shgui_8h_a55b882c68c1a5b8b7433d478ff6e31f8} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC2\_COPY@{SH\_GUI\_VEC2\_COPY}}
+\index{SH\_GUI\_VEC2\_COPY@{SH\_GUI\_VEC2\_COPY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC2\_COPY}{SH\_GUI\_VEC2\_COPY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+COPY(\begin{DoxyParamCaption}\item[{}]{dst,  }\item[{}]{src }\end{DoxyParamCaption})~(((dst).x = (src).x) \&\& ((dst).y = (src).y))}
+
+
+
+Copy a 2D vector from source to destination. 
+
+\Hypertarget{shgui_8h_a62230dab64005300af538ac7f5c2cee8}\label{shgui_8h_a62230dab64005300af538ac7f5c2cee8} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC2\_ZERO@{SH\_GUI\_VEC2\_ZERO}}
+\index{SH\_GUI\_VEC2\_ZERO@{SH\_GUI\_VEC2\_ZERO}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC2\_ZERO}{SH\_GUI\_VEC2\_ZERO}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO}
+
+
+
+Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC2\+\_\+\+ZERO}. 
+
+\Hypertarget{shgui_8h_aba1d5152ca796c2e4922d02767010816}\label{shgui_8h_aba1d5152ca796c2e4922d02767010816} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC3\_COPY@{SH\_GUI\_VEC3\_COPY}}
+\index{SH\_GUI\_VEC3\_COPY@{SH\_GUI\_VEC3\_COPY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC3\_COPY}{SH\_GUI\_VEC3\_COPY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+COPY(\begin{DoxyParamCaption}\item[{}]{dst,  }\item[{}]{src }\end{DoxyParamCaption})~(((dst).x = (src).x) \&\& ((dst).y = (src).y) \&\& ((dst).z = (src).z))}
+
+
+
+Copy a 3D vector from source to destination. 
+
+\Hypertarget{shgui_8h_a3db1e144da2d742bddb9f72e6f0ea82b}\label{shgui_8h_a3db1e144da2d742bddb9f72e6f0ea82b} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC3\_ZERO@{SH\_GUI\_VEC3\_ZERO}}
+\index{SH\_GUI\_VEC3\_ZERO@{SH\_GUI\_VEC3\_ZERO}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC3\_ZERO}{SH\_GUI\_VEC3\_ZERO}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO}
+
+
+
+Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC3\+\_\+\+ZERO}. 
+
+\Hypertarget{shgui_8h_ac317ba09231b9edea68dac8ecb9efa38}\label{shgui_8h_ac317ba09231b9edea68dac8ecb9efa38} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC4\_COPY@{SH\_GUI\_VEC4\_COPY}}
+\index{SH\_GUI\_VEC4\_COPY@{SH\_GUI\_VEC4\_COPY}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC4\_COPY}{SH\_GUI\_VEC4\_COPY}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+COPY(\begin{DoxyParamCaption}\item[{}]{dst,  }\item[{}]{src }\end{DoxyParamCaption})~(((dst).x = (src).x) \&\& ((dst).y = (src).y) \&\& ((dst).z = (src).z) \&\& ((dst).w = (src).w))}
+
+
+
+Copy a 4D vector from source to destination. 
+
+\Hypertarget{shgui_8h_a79e017d39157bd3bf919edede8883fac}\label{shgui_8h_a79e017d39157bd3bf919edede8883fac} 
+\index{shgui.h@{shgui.h}!SH\_GUI\_VEC4\_ZERO@{SH\_GUI\_VEC4\_ZERO}}
+\index{SH\_GUI\_VEC4\_ZERO@{SH\_GUI\_VEC4\_ZERO}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{SH\_GUI\_VEC4\_ZERO}{SH\_GUI\_VEC4\_ZERO}}
+{\footnotesize\ttfamily \#define SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO~\+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO}
+
+
+
+Alias for {\ttfamily \+\_\+\+SH\+\_\+\+GUI\+\_\+\+VEC4\+\_\+\+ZERO}. 
+
+\Hypertarget{shgui_8h_aedae4a024a7e3481cebc0312408abb8e}\label{shgui_8h_aedae4a024a7e3481cebc0312408abb8e} 
+\index{shgui.h@{shgui.h}!shAllocateGui@{shAllocateGui}}
+\index{shAllocateGui@{shAllocateGui}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shAllocateGui}{shAllocateGui}}
+{\footnotesize\ttfamily \#define sh\+Allocate\+Gui(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}}\texorpdfstring{$\ast$}{*})calloc(1, sizeof(\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}})))}
+
+
+
+Allocates memory for an instance of the \doxylink{struct_sh_gui}{Sh\+Gui} structure. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly allocated instance of the \doxylink{struct_sh_gui}{Sh\+Gui} structure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ae69f5ff88630435153622cab22fa49d9}\label{shgui_8h_ae69f5ff88630435153622cab22fa49d9} 
+\index{shgui.h@{shgui.h}!shGuiError@{shGuiError}}
+\index{shGuiError@{shGuiError}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiError}{shGuiError}}
+{\footnotesize\ttfamily \#define sh\+Gui\+Error(\begin{DoxyParamCaption}\item[{}]{condition,  }\item[{}]{error\+\_\+msg,  }\item[{}]{failure\+\_\+expression }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{int})(condition))\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}shgui\ error:\ \%s\(\backslash\)n"{}},\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*)(error\_msg));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ failure\_expression;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{shgui_8h_ac3ada90cbae19b201bc363a7289eb278}\label{shgui_8h_ac3ada90cbae19b201bc363a7289eb278} 
+\index{shgui.h@{shgui.h}!shGuiVkResultError@{shGuiVkResultError}}
+\index{shGuiVkResultError@{shGuiVkResultError}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiVkResultError}{shGuiVkResultError}}
+{\footnotesize\ttfamily \#define sh\+Gui\+Vk\+Result\+Error(\begin{DoxyParamCaption}\item[{}]{result,  }\item[{}]{error\+\_\+msg,  }\item[{}]{failure\+\_\+expression }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ ((VkResult)(result)\ !=\ VK\_SUCCESS)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}shgui\ vulkan\ error:\ \%s,\ \%s\(\backslash\)n"{}},\ error\_msg,\ shTranslateVkResult((VkResult)(result)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ failure\_expression;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Macro for checking Vulkan API call results and handling errors. 
+
+This macro is used to check the result of a Vulkan API call and handle any errors that occur. If the result is not VK\+\_\+\+SUCCESS, it prints an error message along with the provided {\ttfamily error\+\_\+msg} and the translated Vulkan result. Additionally, it executes the {\ttfamily failure\+\_\+expression}, allowing for custom error handling code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & The result code to be checked, typically returned by a Vulkan API call. \\
+\hline
+{\em error\+\_\+msg} & A user-\/defined error message to be displayed in case of failure. \\
+\hline
+{\em failure\+\_\+expression} & Custom code or action to be executed in case of failure. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{shgui_8h_a00e46b1be1415e620c0379b7183a2fe6}\label{shgui_8h_a00e46b1be1415e620c0379b7183a2fe6} 
+\index{shgui.h@{shgui.h}!ShGui@{ShGui}}
+\index{ShGui@{ShGui}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGui}{ShGui}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}}}
+
+\Hypertarget{shgui_8h_aac42692bf846c31d71b89bd5e89c30a1}\label{shgui_8h_aac42692bf846c31d71b89bd5e89c30a1} 
+\index{shgui.h@{shgui.h}!ShGui\_UTF32\_Char@{ShGui\_UTF32\_Char}}
+\index{ShGui\_UTF32\_Char@{ShGui\_UTF32\_Char}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGui\_UTF32\_Char}{ShGui\_UTF32\_Char}}
+{\footnotesize\ttfamily \mbox{\hyperlink{shgui_8h_aac42692bf846c31d71b89bd5e89c30a1}{Sh\+Gui\+\_\+\+UTF32\+\_\+\+Char}}}
+
+
+
+Represents a Unicode character encoded in UTF-\/32 format. 
+
+\Hypertarget{shgui_8h_a62b381c08e8fbe7467ac8b05bd572290}\label{shgui_8h_a62b381c08e8fbe7467ac8b05bd572290} 
+\index{shgui.h@{shgui.h}!ShGuiCharInfos@{ShGuiCharInfos}}
+\index{ShGuiCharInfos@{ShGuiCharInfos}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharInfos}{ShGuiCharInfos}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}} \mbox{\hyperlink{struct_sh_gui_char_infos}{Sh\+Gui\+Char\+Infos}}}
+
+\Hypertarget{shgui_8h_a9df9a648db55fa01ce26e2fc81028da1}\label{shgui_8h_a9df9a648db55fa01ce26e2fc81028da1} 
+\index{shgui.h@{shgui.h}!ShGuiCharMesh@{ShGuiCharMesh}}
+\index{ShGuiCharMesh@{ShGuiCharMesh}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharMesh}{ShGuiCharMesh}}
+{\footnotesize\ttfamily typedef float Sh\+Gui\+Char\+Mesh\mbox{[}49\mbox{]}}
+
+\Hypertarget{shgui_8h_a6e5869407d043aad59e8fe5673bbca3d}\label{shgui_8h_a6e5869407d043aad59e8fe5673bbca3d} 
+\index{shgui.h@{shgui.h}!ShGuiCharRaw@{ShGuiCharRaw}}
+\index{ShGuiCharRaw@{ShGuiCharRaw}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharRaw}{ShGuiCharRaw}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}}}
+
+\Hypertarget{shgui_8h_af4cfc284383305f901dab9e31bb6ad6f}\label{shgui_8h_af4cfc284383305f901dab9e31bb6ad6f} 
+\index{shgui.h@{shgui.h}!ShGuiCharRawWriteFlags@{ShGuiCharRawWriteFlags}}
+\index{ShGuiCharRawWriteFlags@{ShGuiCharRawWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharRawWriteFlags}{ShGuiCharRawWriteFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}}}
+
+\Hypertarget{shgui_8h_aa3c1dd28d77fc2ffc98e3ab08ba108cf}\label{shgui_8h_aa3c1dd28d77fc2ffc98e3ab08ba108cf} 
+\index{shgui.h@{shgui.h}!ShGuiCharVertexRaw@{ShGuiCharVertexRaw}}
+\index{ShGuiCharVertexRaw@{ShGuiCharVertexRaw}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharVertexRaw}{ShGuiCharVertexRaw}}
+{\footnotesize\ttfamily Sh\+Gui\+Char\+Vertex\+Raw}
+
+
+
+Type for storing raw character vertex data in a {\ttfamily shgui} application. 
+
+The {\ttfamily Sh\+Gui\+Char\+Vertex\+Raw} type is used to store raw character vertex data in a {\ttfamily shgui} application. It is a memory block of float values with a size corresponding to the maximum character vertex count. \Hypertarget{shgui_8h_ae77d0043e2676ab820d239d91e7dae1a}\label{shgui_8h_ae77d0043e2676ab820d239d91e7dae1a} 
+\index{shgui.h@{shgui.h}!ShGuiCore@{ShGuiCore}}
+\index{ShGuiCore@{ShGuiCore}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCore}{ShGuiCore}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}} \mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}}}
+
+\Hypertarget{shgui_8h_a63f54c0b2ea2bc30c91e6be01a8fea35}\label{shgui_8h_a63f54c0b2ea2bc30c91e6be01a8fea35} 
+\index{shgui.h@{shgui.h}!ShGuiInputFlags@{ShGuiInputFlags}}
+\index{ShGuiInputFlags@{ShGuiInputFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiInputFlags}{ShGuiInputFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}{Sh\+Gui\+Input\+Flags}} \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}{Sh\+Gui\+Input\+Flags}}}
+
+\Hypertarget{shgui_8h_af21e9a483acf02a77d02f08cd1084c84}\label{shgui_8h_af21e9a483acf02a77d02f08cd1084c84} 
+\index{shgui.h@{shgui.h}!ShGuiInputs@{ShGuiInputs}}
+\index{ShGuiInputs@{ShGuiInputs}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiInputs}{ShGuiInputs}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}} \mbox{\hyperlink{struct_sh_gui_inputs}{Sh\+Gui\+Inputs}}}
+
+\Hypertarget{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}\label{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d} 
+\index{shgui.h@{shgui.h}!ShGuiKeyEvents@{ShGuiKeyEvents}}
+\index{ShGuiKeyEvents@{ShGuiKeyEvents}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiKeyEvents}{ShGuiKeyEvents}}
+{\footnotesize\ttfamily Sh\+Gui\+Key\+Events}
+
+
+
+A memory block to represent and store {\ttfamily shgui} key events. 
+
+\Hypertarget{shgui_8h_a74d6ac4ba6233a68cec9549680c8e054}\label{shgui_8h_a74d6ac4ba6233a68cec9549680c8e054} 
+\index{shgui.h@{shgui.h}!ShGuiRegionInfos@{ShGuiRegionInfos}}
+\index{ShGuiRegionInfos@{ShGuiRegionInfos}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiRegionInfos}{ShGuiRegionInfos}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}} \mbox{\hyperlink{struct_sh_gui_region_infos}{Sh\+Gui\+Region\+Infos}}}
+
+\Hypertarget{shgui_8h_a96c05f2c7427b930eacca0119e26e795}\label{shgui_8h_a96c05f2c7427b930eacca0119e26e795} 
+\index{shgui.h@{shgui.h}!ShGuiRegionRaw@{ShGuiRegionRaw}}
+\index{ShGuiRegionRaw@{ShGuiRegionRaw}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiRegionRaw}{ShGuiRegionRaw}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}}}
+
+\Hypertarget{shgui_8h_a7168e22037da7048c6520e85cf695924}\label{shgui_8h_a7168e22037da7048c6520e85cf695924} 
+\index{shgui.h@{shgui.h}!ShGuiRegionRawWriteFlags@{ShGuiRegionRawWriteFlags}}
+\index{ShGuiRegionRawWriteFlags@{ShGuiRegionRawWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiRegionRawWriteFlags}{ShGuiRegionRawWriteFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}}}
+
+\Hypertarget{shgui_8h_a6a1a2772493e3ff07a1a3306e35e97a2}\label{shgui_8h_a6a1a2772493e3ff07a1a3306e35e97a2} 
+\index{shgui.h@{shgui.h}!shguivec2@{shguivec2}}
+\index{shguivec2@{shguivec2}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shguivec2}{shguivec2}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structshguivec2}{shguivec2}} \mbox{\hyperlink{structshguivec2}{shguivec2}}}
+
+\Hypertarget{shgui_8h_a7e880e06ee42933ee84088a80ba2857f}\label{shgui_8h_a7e880e06ee42933ee84088a80ba2857f} 
+\index{shgui.h@{shgui.h}!shguivec3@{shguivec3}}
+\index{shguivec3@{shguivec3}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shguivec3}{shguivec3}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structshguivec3}{shguivec3}} \mbox{\hyperlink{structshguivec3}{shguivec3}}}
+
+\Hypertarget{shgui_8h_a325fd2d177d0b82638f95c846a4ba7de}\label{shgui_8h_a325fd2d177d0b82638f95c846a4ba7de} 
+\index{shgui.h@{shgui.h}!shguivec4@{shguivec4}}
+\index{shguivec4@{shguivec4}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shguivec4}{shguivec4}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structshguivec4}{shguivec4}} \mbox{\hyperlink{structshguivec4}{shguivec4}}}
+
+\Hypertarget{shgui_8h_a971ccf12b1eb4b7f32036f6601f02dca}\label{shgui_8h_a971ccf12b1eb4b7f32036f6601f02dca} 
+\index{shgui.h@{shgui.h}!ShGuiWidgetFlags@{ShGuiWidgetFlags}}
+\index{ShGuiWidgetFlags@{ShGuiWidgetFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiWidgetFlags}{ShGuiWidgetFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}} \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}}}
+
+\Hypertarget{shgui_8h_a55db8d32791f0fa2a0f1988f4cac5721}\label{shgui_8h_a55db8d32791f0fa2a0f1988f4cac5721} 
+\index{shgui.h@{shgui.h}!ShGuiWriteFlags@{ShGuiWriteFlags}}
+\index{ShGuiWriteFlags@{ShGuiWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiWriteFlags}{ShGuiWriteFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}{Sh\+Gui\+Write\+Flags}} \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}{Sh\+Gui\+Write\+Flags}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04} 
+\index{shgui.h@{shgui.h}!ShGuiCharRawWriteFlags@{ShGuiCharRawWriteFlags}}
+\index{ShGuiCharRawWriteFlags@{ShGuiCharRawWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiCharRawWriteFlags}{ShGuiCharRawWriteFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}}}
+
+
+
+Flags for specifying raw write operations on {\ttfamily shgui} characters. 
+
+The {\ttfamily Sh\+Gui\+Char\+Raw\+Write\+Flags} enumeration defines a set of flags used to specify raw write operations on {\ttfamily shgui} characters. These flags indicate which properties of a character should be updated during the write operation. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_X\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_X\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_X\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_X\_POSITION}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04a9e8780c0f1d6e15910d64fe05263fc1d}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04a9e8780c0f1d6e15910d64fe05263fc1d} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION&Overwrite the X position of the character. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_Y\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_Y\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_Y\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_Y\_POSITION}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae3a40be9a1c9b8281e4e60c328dae912}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae3a40be9a1c9b8281e4e60c328dae912} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION&Overwrite the Y position of the character. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_POSITION@{SH\_GUI\_CHAR\_RAW\_WRITE\_POSITION}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04a3476f71408522d535badffbf06231941}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04a3476f71408522d535badffbf06231941} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+POSITION&Overwrite both X and Y positions of the character. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_SCALE@{SH\_GUI\_CHAR\_RAW\_WRITE\_SCALE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_SCALE@{SH\_GUI\_CHAR\_RAW\_WRITE\_SCALE}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae854485dbedc8fee33d5c59160111852}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04ae854485dbedc8fee33d5c59160111852} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+SCALE&Overwrite the scale of the character. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_Z\_PRIORITY@{SH\_GUI\_CHAR\_RAW\_WRITE\_Z\_PRIORITY}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_Z\_PRIORITY@{SH\_GUI\_CHAR\_RAW\_WRITE\_Z\_PRIORITY}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04a70247ed1143359ecb83b6d3233eb08ec}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04a70247ed1143359ecb83b6d3233eb08ec} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Z\+\_\+\+PRIORITY&Overwrite the priority of the character. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_WRITE\_COLOR@{SH\_GUI\_CHAR\_RAW\_WRITE\_COLOR}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_WRITE\_COLOR@{SH\_GUI\_CHAR\_RAW\_WRITE\_COLOR}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04aba76a553ca82aa925d81453fbe51a3f4}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04aba76a553ca82aa925d81453fbe51a3f4} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+COLOR&Overwrite the color of the character. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CHAR\_RAW\_MAX\_ENUM@{SH\_GUI\_CHAR\_RAW\_MAX\_ENUM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CHAR\_RAW\_MAX\_ENUM@{SH\_GUI\_CHAR\_RAW\_MAX\_ENUM}}}\Hypertarget{shgui_8h_a028083eb19dec4c6514679d168ce4d04a8afb17a1593f3f2146c568f8050dd1a7}\label{shgui_8h_a028083eb19dec4c6514679d168ce4d04a8afb17a1593f3f2146c568f8050dd1a7} 
+SH\+\_\+\+GUI\+\_\+\+CHAR\+\_\+\+RAW\+\_\+\+MAX\+\_\+\+ENUM&Maximum value for enumeration boundary checking. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3} 
+\index{shgui.h@{shgui.h}!ShGuiInputFlags@{ShGuiInputFlags}}
+\index{ShGuiInputFlags@{ShGuiInputFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiInputFlags}{ShGuiInputFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3}{Sh\+Gui\+Input\+Flags}}}
+
+
+
+Flags for {\ttfamily shgui} input handling. These flags help control how input events, such as clicks and key presses, are processed. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CLICK\_ONCE@{SH\_GUI\_CLICK\_ONCE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CLICK\_ONCE@{SH\_GUI\_CLICK\_ONCE}}}\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af8d40427f0326bedeb943b90dc622eb0}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af8d40427f0326bedeb943b90dc622eb0} 
+SH\+\_\+\+GUI\+\_\+\+CLICK\+\_\+\+ONCE&Single click event. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CLICK\_REPEAT@{SH\_GUI\_CLICK\_REPEAT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CLICK\_REPEAT@{SH\_GUI\_CLICK\_REPEAT}}}\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3abfbab7d756c4fac1ea3f92a5e841d3fe}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3abfbab7d756c4fac1ea3f92a5e841d3fe} 
+SH\+\_\+\+GUI\+\_\+\+CLICK\+\_\+\+REPEAT&Repeated click event. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_PRESS\_ONCE@{SH\_GUI\_PRESS\_ONCE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_PRESS\_ONCE@{SH\_GUI\_PRESS\_ONCE}}}\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af664c8041c3d24b5604a193b2282f00a}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3af664c8041c3d24b5604a193b2282f00a} 
+SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+ONCE&Single press event. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_PRESS\_REPEAT@{SH\_GUI\_PRESS\_REPEAT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_PRESS\_REPEAT@{SH\_GUI\_PRESS\_REPEAT}}}\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ad804a40f55809cfa67fa24f0a141c8ee}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ad804a40f55809cfa67fa24f0a141c8ee} 
+SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+REPEAT&Repeated press event. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_PRESS\_MAX\_ENUM@{SH\_GUI\_PRESS\_MAX\_ENUM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_PRESS\_MAX\_ENUM@{SH\_GUI\_PRESS\_MAX\_ENUM}}}\Hypertarget{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ab874bc2fc9b5124c263bb102b7c8f8ef}\label{shgui_8h_ad7d53e8824fddccbcda50ae9453b23a3ab874bc2fc9b5124c263bb102b7c8f8ef} 
+SH\+\_\+\+GUI\+\_\+\+PRESS\+\_\+\+MAX\+\_\+\+ENUM&Maximum value for enumeration boundary checking. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19} 
+\index{shgui.h@{shgui.h}!ShGuiRegionRawWriteFlags@{ShGuiRegionRawWriteFlags}}
+\index{ShGuiRegionRawWriteFlags@{ShGuiRegionRawWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiRegionRawWriteFlags}{ShGuiRegionRawWriteFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}}}
+
+
+
+Flags for specifying raw write operations on {\ttfamily shgui} regions. 
+
+The {\ttfamily Sh\+Gui\+Region\+Raw\+Write\+Flags} enumeration defines a set of flags used to specify raw write operations on {\ttfamily shgui} regions. These flags indicate which properties of a region should be updated during the write operation. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_NONE@{SH\_GUI\_REGION\_RAW\_WRITE\_NONE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_NONE@{SH\_GUI\_REGION\_RAW\_WRITE\_NONE}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a4d6854d7a3d46d51c256de64e15d6223}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a4d6854d7a3d46d51c256de64e15d6223} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+NONE&No raw write operation. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_X\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_X\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_X\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_X\_POSITION}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a81fd36e3498189e4e124583163fb93fd}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a81fd36e3498189e4e124583163fb93fd} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+POSITION&Write the X-\/position property of a {\ttfamily shgui} region. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_Y\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_POSITION}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a67c7a0e523307e4a27ba1b5e01307726}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a67c7a0e523307e4a27ba1b5e01307726} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+POSITION&Write the Y-\/position property of a {\ttfamily shgui} region. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_POSITION}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_POSITION@{SH\_GUI\_REGION\_RAW\_WRITE\_POSITION}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19ab2ca7600c471fb005eb804cdd6d6652c}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19ab2ca7600c471fb005eb804cdd6d6652c} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+POSITION&Write both X and Y positions of a {\ttfamily shgui} region. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_X\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_X\_SCALE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_X\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_X\_SCALE}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19adaad5af443895eff55175bae9e17bee4}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19adaad5af443895eff55175bae9e17bee4} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+X\+\_\+\+SCALE&Write the X-\/scale property of a {\ttfamily shgui} region. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_SCALE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_Y\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_Y\_SCALE}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a498b627339d14f9cb1215168bceeea9e}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a498b627339d14f9cb1215168bceeea9e} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Y\+\_\+\+SCALE&Write the Y-\/scale property of a {\ttfamily shgui} region. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_SCALE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_SCALE@{SH\_GUI\_REGION\_RAW\_WRITE\_SCALE}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19adafa7386556c1602147e0a07137a8c14}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19adafa7386556c1602147e0a07137a8c14} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+SCALE&Write both X and Y scales of a {\ttfamily shgui} region. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_COLOR@{SH\_GUI\_REGION\_RAW\_WRITE\_COLOR}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_COLOR@{SH\_GUI\_REGION\_RAW\_WRITE\_COLOR}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19ac0f29acb7830f62d7f469a22963a4af8}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19ac0f29acb7830f62d7f469a22963a4af8} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+COLOR&Write the color property of a {\ttfamily shgui} region. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_EDGE\_COLOR@{SH\_GUI\_REGION\_RAW\_WRITE\_EDGE\_COLOR}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_EDGE\_COLOR@{SH\_GUI\_REGION\_RAW\_WRITE\_EDGE\_COLOR}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a3578004f696e846666ff02ed16b42aad}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a3578004f696e846666ff02ed16b42aad} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+EDGE\+\_\+\+COLOR&Write the edge color property of a {\ttfamily shgui} region. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_Z\_PRIORITY@{SH\_GUI\_REGION\_RAW\_WRITE\_Z\_PRIORITY}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_Z\_PRIORITY@{SH\_GUI\_REGION\_RAW\_WRITE\_Z\_PRIORITY}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a84a8952c8d7cc8a469bf3372e0c4eb0c}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a84a8952c8d7cc8a469bf3372e0c4eb0c} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+Z\+\_\+\+PRIORITY&Write the Z-\/priority property of a {\ttfamily shgui} region. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_REGION\_RAW\_WRITE\_MAX\_ENUM@{SH\_GUI\_REGION\_RAW\_WRITE\_MAX\_ENUM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_REGION\_RAW\_WRITE\_MAX\_ENUM@{SH\_GUI\_REGION\_RAW\_WRITE\_MAX\_ENUM}}}\Hypertarget{shgui_8h_ac996ab68bd7341e072f730a374011d19a78f3e6a6eebd07ec6b77c89bed78bf4d}\label{shgui_8h_ac996ab68bd7341e072f730a374011d19a78f3e6a6eebd07ec6b77c89bed78bf4d} 
+SH\+\_\+\+GUI\+\_\+\+REGION\+\_\+\+RAW\+\_\+\+WRITE\+\_\+\+MAX\+\_\+\+ENUM&Maximum value for enumeration boundary checking. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01} 
+\index{shgui.h@{shgui.h}!ShGuiWidgetFlags@{ShGuiWidgetFlags}}
+\index{ShGuiWidgetFlags@{ShGuiWidgetFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiWidgetFlags}{ShGuiWidgetFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}}}
+
+
+
+Represents different flags that can be used to configure a GUI widget. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CENTER\_WIDTH@{SH\_GUI\_CENTER\_WIDTH}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CENTER\_WIDTH@{SH\_GUI\_CENTER\_WIDTH}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a904273812b5ee5576c4a0d9db53e0a70}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a904273812b5ee5576c4a0d9db53e0a70} 
+SH\+\_\+\+GUI\+\_\+\+CENTER\+\_\+\+WIDTH&Center the widget horizontally. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_CENTER\_HEIGHT@{SH\_GUI\_CENTER\_HEIGHT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_CENTER\_HEIGHT@{SH\_GUI\_CENTER\_HEIGHT}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01afb648a930c3598a8f4f28379278d3f7b}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01afb648a930c3598a8f4f28379278d3f7b} 
+SH\+\_\+\+GUI\+\_\+\+CENTER\+\_\+\+HEIGHT&Center the widget vertically. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_EDGE\_LEFT@{SH\_GUI\_EDGE\_LEFT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_EDGE\_LEFT@{SH\_GUI\_EDGE\_LEFT}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a873924271d75cf44e6115deae23155a6}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a873924271d75cf44e6115deae23155a6} 
+SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+LEFT&Place the widget at the left edge. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_EDGE\_RIGHT@{SH\_GUI\_EDGE\_RIGHT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_EDGE\_RIGHT@{SH\_GUI\_EDGE\_RIGHT}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01aae3169438dda6cd814f2996026d7ed75}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01aae3169438dda6cd814f2996026d7ed75} 
+SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+RIGHT&Place the widget at the right edge. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_EDGE\_TOP@{SH\_GUI\_EDGE\_TOP}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_EDGE\_TOP@{SH\_GUI\_EDGE\_TOP}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a0e0f828dbf352a4da6085454fe025224}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a0e0f828dbf352a4da6085454fe025224} 
+SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+TOP&Place the widget at the top edge. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_EDGE\_BOTTOM@{SH\_GUI\_EDGE\_BOTTOM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_EDGE\_BOTTOM@{SH\_GUI\_EDGE\_BOTTOM}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a5041f5efe1cf9841ae249621d8508332}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a5041f5efe1cf9841ae249621d8508332} 
+SH\+\_\+\+GUI\+\_\+\+EDGE\+\_\+\+BOTTOM&Place the widget at the bottom edge. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_PIXELS@{SH\_GUI\_PIXELS}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_PIXELS@{SH\_GUI\_PIXELS}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01ac782c5b6d1a8a7e1b5ddde85eb2d0eca}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01ac782c5b6d1a8a7e1b5ddde85eb2d0eca} 
+SH\+\_\+\+GUI\+\_\+\+PIXELS&Specify widget dimensions in pixels. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_RELATIVE@{SH\_GUI\_RELATIVE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_RELATIVE@{SH\_GUI\_RELATIVE}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4830e45ad979bd2f6310728db43aa2eb}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4830e45ad979bd2f6310728db43aa2eb} 
+SH\+\_\+\+GUI\+\_\+\+RELATIVE&Specify widget dimensions as relative percentages. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_WIDGET\_FLAGS\_MAX\_ENUM@{SH\_GUI\_WIDGET\_FLAGS\_MAX\_ENUM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_WIDGET\_FLAGS\_MAX\_ENUM@{SH\_GUI\_WIDGET\_FLAGS\_MAX\_ENUM}}}\Hypertarget{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4c95d55530f2d0f89762ae63974932a3}\label{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01a4c95d55530f2d0f89762ae63974932a3} 
+SH\+\_\+\+GUI\+\_\+\+WIDGET\+\_\+\+FLAGS\+\_\+\+MAX\+\_\+\+ENUM&Maximum value for enumeration boundary checking. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6} 
+\index{shgui.h@{shgui.h}!ShGuiWriteFlags@{ShGuiWriteFlags}}
+\index{ShGuiWriteFlags@{ShGuiWriteFlags}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{ShGuiWriteFlags}{ShGuiWriteFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6}{Sh\+Gui\+Write\+Flags}}}
+
+
+
+Represents different flags for writing specific properties of a GUI element. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_WIDTH@{SH\_GUI\_WIDTH}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_WIDTH@{SH\_GUI\_WIDTH}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6aa83c903abb74c0aab72c803734acbc8d}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6aa83c903abb74c0aab72c803734acbc8d} 
+SH\+\_\+\+GUI\+\_\+\+WIDTH&Write the width property of a GUI element. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_HEIGHT@{SH\_GUI\_HEIGHT}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_HEIGHT@{SH\_GUI\_HEIGHT}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6af99a77a1825406ae93ab75ab6badfe69}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6af99a77a1825406ae93ab75ab6badfe69} 
+SH\+\_\+\+GUI\+\_\+\+HEIGHT&Write the height property of a GUI element. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_POSITION\_X@{SH\_GUI\_POSITION\_X}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_POSITION\_X@{SH\_GUI\_POSITION\_X}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a1e084ce7a8a4c7ff50c92323887a435b}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a1e084ce7a8a4c7ff50c92323887a435b} 
+SH\+\_\+\+GUI\+\_\+\+POSITION\+\_\+X&Write the X-\/coordinate property of a GUI element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_POSITION\_Y@{SH\_GUI\_POSITION\_Y}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_POSITION\_Y@{SH\_GUI\_POSITION\_Y}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a8df2922571a7a90591a33e6efbb99bca}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a8df2922571a7a90591a33e6efbb99bca} 
+SH\+\_\+\+GUI\+\_\+\+POSITION\+\_\+Y&Write the Y-\/coordinate property of a GUI element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_TITLE@{SH\_GUI\_TITLE}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_TITLE@{SH\_GUI\_TITLE}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6acbe072a8aac1484a75910622fac8e4e8}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6acbe072a8aac1484a75910622fac8e4e8} 
+SH\+\_\+\+GUI\+\_\+\+TITLE&Write the title property of a GUI element. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SH\_GUI\_WRITE\_FLAGS\_MAX\_ENUM@{SH\_GUI\_WRITE\_FLAGS\_MAX\_ENUM}!shgui.h@{shgui.h}}\index{shgui.h@{shgui.h}!SH\_GUI\_WRITE\_FLAGS\_MAX\_ENUM@{SH\_GUI\_WRITE\_FLAGS\_MAX\_ENUM}}}\Hypertarget{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a711eab33fb56908b4df8b8e69d205413}\label{shgui_8h_a4f4a1b0f1828458485ea5f2401d4d8f6a711eab33fb56908b4df8b8e69d205413} 
+SH\+\_\+\+GUI\+\_\+\+WRITE\+\_\+\+FLAGS\+\_\+\+MAX\+\_\+\+ENUM&Maximum value for enumeration boundary checking. ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{shgui_8h_abd1993e44d2cf04573e66cfd02a98fb8}\label{shgui_8h_abd1993e44d2cf04573e66cfd02a98fb8} 
+\index{shgui.h@{shgui.h}!shGuiAllocateMemory@{shGuiAllocateMemory}}
+\index{shGuiAllocateMemory@{shGuiAllocateMemory}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiAllocateMemory()}{shGuiAllocateMemory()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Allocate\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Allocates memory for the GUI components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a33cbc466e9e476bbb573e99ca814cda8}\label{shgui_8h_a33cbc466e9e476bbb573e99ca814cda8} 
+\index{shgui.h@{shgui.h}!shGuiAllocatePipelineResources@{shGuiAllocatePipelineResources}}
+\index{shGuiAllocatePipelineResources@{shGuiAllocatePipelineResources}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiAllocatePipelineResources()}{shGuiAllocatePipelineResources()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Allocate\+Pipeline\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{swapchain\+\_\+image\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Allocates resources for the GUI pipelines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em swapchain\+\_\+image\+\_\+count} & The number of swapchain images.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a98b278cecd8af517d5ae05406d3e61de}\label{shgui_8h_a98b278cecd8af517d5ae05406d3e61de} 
+\index{shgui.h@{shgui.h}!shGuiBuildCharPipeline@{shGuiBuildCharPipeline}}
+\index{shGuiBuildCharPipeline@{shGuiBuildCharPipeline}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiBuildCharPipeline()}{shGuiBuildCharPipeline()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Build\+Char\+Pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+\_\+shader\+\_\+path,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+\_\+shader\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Builds the char pipeline using the provided vertex and fragment shader paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em vertex\+\_\+shader\+\_\+path} & The path to the vertex shader file in the spv file format. \\
+\hline
+{\em fragment\+\_\+shader\+\_\+path} & The path to the fragment shader file in the spv file format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_af66d73a5b488af9c0941e06386891461}\label{shgui_8h_af66d73a5b488af9c0941e06386891461} 
+\index{shgui.h@{shgui.h}!shGuiBuildRegionPipeline@{shGuiBuildRegionPipeline}}
+\index{shGuiBuildRegionPipeline@{shGuiBuildRegionPipeline}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiBuildRegionPipeline()}{shGuiBuildRegionPipeline()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Build\+Region\+Pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{vertex\+\_\+shader\+\_\+path,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fragment\+\_\+shader\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Builds the region pipeline using the provided vertex and fragment shader paths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em vertex\+\_\+shader\+\_\+path} & The path to the vertex shader file in the spv file format. \\
+\hline
+{\em fragment\+\_\+shader\+\_\+path} & The path to the fragment shader file in the spv file format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a146dc717bef3a5f08ca3188a0da5637f}\label{shgui_8h_a146dc717bef3a5f08ca3188a0da5637f} 
+\index{shgui.h@{shgui.h}!shGuiDestroyPipelineResources@{shGuiDestroyPipelineResources}}
+\index{shGuiDestroyPipelineResources@{shGuiDestroyPipelineResources}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiDestroyPipelineResources()}{shGuiDestroyPipelineResources()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Destroy\+Pipeline\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Destroys the resources allocated for the GUI Vulkan pipelines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a93ded455297322869e9c42ab4e00d63d}\label{shgui_8h_a93ded455297322869e9c42ab4e00d63d} 
+\index{shgui.h@{shgui.h}!shGuiDestroyPipelines@{shGuiDestroyPipelines}}
+\index{shGuiDestroyPipelines@{shGuiDestroyPipelines}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiDestroyPipelines()}{shGuiDestroyPipelines()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Destroy\+Pipelines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Destroys the GUI Vulkan pipelines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_af9ebb886cfa8e01160dd1c093ef3df26}\label{shgui_8h_af9ebb886cfa8e01160dd1c093ef3df26} 
+\index{shgui.h@{shgui.h}!shGuiGetAvailableHeap@{shGuiGetAvailableHeap}}
+\index{shGuiGetAvailableHeap@{shGuiGetAvailableHeap}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiGetAvailableHeap()}{shGuiGetAvailableHeap()}}
+{\footnotesize\ttfamily uint32\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Get\+Available\+Heap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the available heap size for allocating memory, taking in consideration the host heap memory (RAM) and the GPU heap memory (VRAM). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The available heap size. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a6a143e521310c18566214bd5979a81e1}\label{shgui_8h_a6a143e521310c18566214bd5979a81e1} 
+\index{shgui.h@{shgui.h}!shGuiInit@{shGuiInit}}
+\index{shGuiInit@{shGuiInit}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiInit()}{shGuiInit()}}
+{\footnotesize\ttfamily uint8\+\_\+t sh\+Gui\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{\mbox{\hyperlink{struct_sh_gui_core}{Sh\+Gui\+Core}}}]{core }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Initializes the GUI with the provided {\ttfamily \doxylink{struct_sh_gui_core}{Sh\+Gui\+Core}} structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em core} & A valid \doxylink{struct_sh_gui_core}{Sh\+Gui\+Core} structure containing information about the GUI core components.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a9b1a4921e32015a39728451daf944b0e}\label{shgui_8h_a9b1a4921e32015a39728451daf944b0e} 
+\index{shgui.h@{shgui.h}!shGuiLinkInputs@{shGuiLinkInputs}}
+\index{shGuiLinkInputs@{shGuiLinkInputs}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiLinkInputs()}{shGuiLinkInputs()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Link\+Inputs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+window\+\_\+width,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+window\+\_\+height,  }\item[{float \texorpdfstring{$\ast$}{*}}]{p\+\_\+cursor\+\_\+pos\+\_\+x,  }\item[{float \texorpdfstring{$\ast$}{*}}]{p\+\_\+cursor\+\_\+pos\+\_\+y,  }\item[{\mbox{\hyperlink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}}}]{key\+\_\+events,  }\item[{\mbox{\hyperlink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}}}]{last\+\_\+key\+\_\+events,  }\item[{double \texorpdfstring{$\ast$}{*}}]{p\+\_\+delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Links the inputs to the \doxylink{struct_sh_gui}{Sh\+Gui} handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em p\+\_\+window\+\_\+width} & A pointer to the window width variable. \\
+\hline
+{\em p\+\_\+window\+\_\+height} & A pointer to the window height variable. \\
+\hline
+{\em p\+\_\+cursor\+\_\+pos\+\_\+x} & A pointer to the cursor position x variable. \\
+\hline
+{\em p\+\_\+cursor\+\_\+pos\+\_\+y} & A pointer to the cursor position y variable. \\
+\hline
+{\em key\+\_\+events} & A valid of \doxylink{shgui_8h_ad78ef9e1fbfea483c389d7d42d67711d}{Sh\+Gui\+Key\+Events}. \\
+\hline
+{\em p\+\_\+delta\+\_\+time} & A pointer to the delta time variable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ac86454d2a0765c1a715829425bee38fc}\label{shgui_8h_ac86454d2a0765c1a715829425bee38fc} 
+\index{shgui.h@{shgui.h}!shGuiOverwriteChar@{shGuiOverwriteChar}}
+\index{shGuiOverwriteChar@{shGuiOverwriteChar}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiOverwriteChar()}{shGuiOverwriteChar()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Overwrite\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{char\+\_\+idx,  }\item[{\mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+src\+\_\+data,  }\item[{\mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Overwrites a character in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em char\+\_\+idx} & The index of the character to overwrite. \\
+\hline
+{\em p\+\_\+src\+\_\+data} & A pointer to the source data for overwriting the character. \\
+\hline
+{\em flags} & Flags for overwriting the character, see \doxylink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a40e55ab9107287ba86c7afbefc3cbfb6}\label{shgui_8h_a40e55ab9107287ba86c7afbefc3cbfb6} 
+\index{shgui.h@{shgui.h}!shGuiOverwriteChars@{shGuiOverwriteChars}}
+\index{shGuiOverwriteChars@{shGuiOverwriteChars}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiOverwriteChars()}{shGuiOverwriteChars()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Overwrite\+Chars (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{first\+\_\+char,  }\item[{uint32\+\_\+t}]{char\+\_\+count,  }\item[{\mbox{\hyperlink{struct_sh_gui_char_raw}{Sh\+Gui\+Char\+Raw}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+src\+\_\+data,  }\item[{\mbox{\hyperlink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Overwrites multiple characters in the GUI.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em first\+\_\+char} & The index of the first character to overwrite. \\
+\hline
+{\em char\+\_\+count} & The number of characters to overwrite. \\
+\hline
+{\em p\+\_\+src\+\_\+data} & A pointer to the source data for overwriting the characters. \\
+\hline
+{\em flags} & Flags for overwriting the characters, see \doxylink{shgui_8h_a028083eb19dec4c6514679d168ce4d04}{Sh\+Gui\+Char\+Raw\+Write\+Flags}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a9dd2b1117c70f24a1c9419d31e3a3851}\label{shgui_8h_a9dd2b1117c70f24a1c9419d31e3a3851} 
+\index{shgui.h@{shgui.h}!shGuiOverwriteRegion@{shGuiOverwriteRegion}}
+\index{shGuiOverwriteRegion@{shGuiOverwriteRegion}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiOverwriteRegion()}{shGuiOverwriteRegion()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Overwrite\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{region\+\_\+idx,  }\item[{\mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+src\+\_\+data,  }\item[{\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Overwrites a region in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em region\+\_\+idx} & The index of the region to overwrite. \\
+\hline
+{\em p\+\_\+src\+\_\+data} & A pointer to the source data for overwriting the region. \\
+\hline
+{\em flags} & Flags for overwriting the region, see \doxylink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_acc9092658461c25ba25153c8664f16c1}\label{shgui_8h_acc9092658461c25ba25153c8664f16c1} 
+\index{shgui.h@{shgui.h}!shGuiOverwriteRegions@{shGuiOverwriteRegions}}
+\index{shGuiOverwriteRegions@{shGuiOverwriteRegions}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiOverwriteRegions()}{shGuiOverwriteRegions()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Overwrite\+Regions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{first\+\_\+region,  }\item[{uint32\+\_\+t}]{region\+\_\+count,  }\item[{\mbox{\hyperlink{struct_sh_gui_region_raw}{Sh\+Gui\+Region\+Raw}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+src\+\_\+data,  }\item[{\mbox{\hyperlink{shgui_8h_ac996ab68bd7341e072f730a374011d19}{Sh\+Gui\+Region\+Raw\+Write\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Overwrites multiple regions in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em first\+\_\+region} & The index of the first region to overwrite. \\
+\hline
+{\em region\+\_\+count} & The number of regions to overwrite. \\
+\hline
+{\em p\+\_\+src\+\_\+data} & A pointer to the source data for overwriting the regions. \\
+\hline
+{\em flags} & Flags for overwriting the regions.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ae479c4197e09fecd279f1d16438e4391}\label{shgui_8h_ae479c4197e09fecd279f1d16438e4391} 
+\index{shgui.h@{shgui.h}!shGuiReadBinary@{shGuiReadBinary}}
+\index{shGuiReadBinary@{shGuiReadBinary}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiReadBinary()}{shGuiReadBinary()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Read\+Binary (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{path,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+code\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Reads a binary file and returns the binary data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the binary file. \\
+\hline
+{\em p\+\_\+code\+\_\+size} & A pointer to a variable to store the size of the binary file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binary data located in a heap-\/allocated block. Needs to be freed after usage. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_af689a8711e8b353a6fc8cda0c39097d6}\label{shgui_8h_af689a8711e8b353a6fc8cda0c39097d6} 
+\index{shgui.h@{shgui.h}!shGuiRegion@{shGuiRegion}}
+\index{shGuiRegion@{shGuiRegion}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiRegion()}{shGuiRegion()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Region (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{\mbox{\hyperlink{structshguivec2}{shguivec2}}}]{position\+\_\+zero,  }\item[{\mbox{\hyperlink{structshguivec2}{shguivec2}}}]{scale\+\_\+zero,  }\item[{\mbox{\hyperlink{structshguivec4}{shguivec4}}}]{fill\+\_\+color\+\_\+zero,  }\item[{\mbox{\hyperlink{structshguivec4}{shguivec4}}}]{edge\+\_\+fill\+\_\+color\+\_\+zero,  }\item[{\mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Creates a region in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em position\+\_\+zero} & The position of region. \\
+\hline
+{\em scale\+\_\+zero} & The scale of the region, in pixels or relative to the window dimensions, depending on the {\ttfamily flags} argument. \\
+\hline
+{\em fill\+\_\+color\+\_\+zero} & The fill color of the region. \\
+\hline
+{\em edge\+\_\+color\+\_\+zero} & The edge color of the region. \\
+\hline
+{\em flags} & Flags for creating a region.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a609c7b08fddd09c7885395decf4a4e96}\label{shgui_8h_a609c7b08fddd09c7885395decf4a4e96} 
+\index{shgui.h@{shgui.h}!shGuiRelease@{shGuiRelease}}
+\index{shGuiRelease@{shGuiRelease}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiRelease()}{shGuiRelease()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Releases the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ac44e13be5c48989e420218e1dd467897}\label{shgui_8h_ac44e13be5c48989e420218e1dd467897} 
+\index{shgui.h@{shgui.h}!shGuiReleaseMemory@{shGuiReleaseMemory}}
+\index{shGuiReleaseMemory@{shGuiReleaseMemory}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiReleaseMemory()}{shGuiReleaseMemory()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Release\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Releases the memory allocated for the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_aecd811e0d62c7500dc8cb86f75e4634b}\label{shgui_8h_aecd811e0d62c7500dc8cb86f75e4634b} 
+\index{shgui.h@{shgui.h}!shGuiRender@{shGuiRender}}
+\index{shGuiRender@{shGuiRender}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiRender()}{shGuiRender()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{Vk\+Command\+Buffer}]{cmd\+\_\+buffer,  }\item[{uint32\+\_\+t}]{swapchain\+\_\+image\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Renders the GUI using the provided command buffer and swapchain image index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em cmd\+\_\+buffer} & A Vulkan command buffer valid for graphics operations, see the Vulkan API documentation for more details. \\
+\hline
+{\em swapchain\+\_\+image\+\_\+idx} & The index of the current swapchain image.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a8b3bc79cd9cb70483d361bba0c337615}\label{shgui_8h_a8b3bc79cd9cb70483d361bba0c337615} 
+\index{shgui.h@{shgui.h}!shGuiResetInputs@{shGuiResetInputs}}
+\index{shGuiResetInputs@{shGuiResetInputs}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiResetInputs()}{shGuiResetInputs()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Reset\+Inputs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Resets the GUI inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_aa3af600ca32b31b38921432b71a745b3}\label{shgui_8h_aa3af600ca32b31b38921432b71a745b3} 
+\index{shgui.h@{shgui.h}!shGuiResizeInterface@{shGuiResizeInterface}}
+\index{shGuiResizeInterface@{shGuiResizeInterface}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiResizeInterface()}{shGuiResizeInterface()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Resize\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{uint32\+\_\+t}]{last\+\_\+width,  }\item[{uint32\+\_\+t}]{last\+\_\+height,  }\item[{uint32\+\_\+t}]{current\+\_\+width,  }\item[{uint32\+\_\+t}]{current\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Resizes the GUI interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em last\+\_\+width} & The previous width of the interface. \\
+\hline
+{\em last\+\_\+height} & The previous height of the interface. \\
+\hline
+{\em current\+\_\+width} & The current width of the interface. \\
+\hline
+{\em current\+\_\+height} & The current height of the interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a8f856bc2003792b4f495c4e06bb988ad}\label{shgui_8h_a8f856bc2003792b4f495c4e06bb988ad} 
+\index{shgui.h@{shgui.h}!shGuiScaleUI@{shGuiScaleUI}}
+\index{shGuiScaleUI@{shGuiScaleUI}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiScaleUI()}{shGuiScaleUI()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Scale\+UI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{float}]{region\+\_\+scaling\+\_\+factor,  }\item[{float}]{char\+\_\+scaling\+\_\+factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Scales the UI of the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em region\+\_\+scaling\+\_\+factor} & The scaling factor for regions. \\
+\hline
+{\em char\+\_\+scaling\+\_\+factor} & The scaling factor for characters.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ac4149238a0577b942b1ded2c2703ddf9}\label{shgui_8h_ac4149238a0577b942b1ded2c2703ddf9} 
+\index{shgui.h@{shgui.h}!shGuiSetRenderpass@{shGuiSetRenderpass}}
+\index{shGuiSetRenderpass@{shGuiSetRenderpass}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiSetRenderpass()}{shGuiSetRenderpass()}}
+{\footnotesize\ttfamily uint8\+\_\+t sh\+Gui\+Set\+Renderpass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{Vk\+Render\+Pass}]{renderpass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Sets the Vulkan render pass for the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em renderpass} & A valid Vulkan render pass handle, see the Vulkan API documentation for more details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a52453bea0f771d063f9eff32311158ee}\label{shgui_8h_a52453bea0f771d063f9eff32311158ee} 
+\index{shgui.h@{shgui.h}!shGuiSetSurface@{shGuiSetSurface}}
+\index{shGuiSetSurface@{shGuiSetSurface}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiSetSurface()}{shGuiSetSurface()}}
+{\footnotesize\ttfamily uint8\+\_\+t sh\+Gui\+Set\+Surface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{Vk\+Surface\+KHR}]{surface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Sets the Vulkan surface for the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em surface} & A valid Vulkan surface handle, see the Vulkan API documentation for more details.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a3c531649d79d3e4c4262898161a3aaf3}\label{shgui_8h_a3c531649d79d3e4c4262898161a3aaf3} 
+\index{shgui.h@{shgui.h}!shGuiSubmitInputs@{shGuiSubmitInputs}}
+\index{shGuiSubmitInputs@{shGuiSubmitInputs}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiSubmitInputs()}{shGuiSubmitInputs()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Submit\+Inputs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Submits the recorded inputs to the main \doxylink{struct_sh_gui}{Sh\+Gui} handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ae1e1b1e3ae2c8bfa4482f9a74b759033}\label{shgui_8h_ae1e1b1e3ae2c8bfa4482f9a74b759033} 
+\index{shgui.h@{shgui.h}!shGuiText@{shGuiText}}
+\index{shGuiText@{shGuiText}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiText()}{shGuiText()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{\mbox{\hyperlink{structshguivec2}{shguivec2}}}]{position\+\_\+zero,  }\item[{\mbox{\hyperlink{structshguivec4}{shguivec4}}}]{fill\+\_\+color\+\_\+zero,  }\item[{float}]{scale\+\_\+zero\+\_\+pixels,  }\item[{char \texorpdfstring{$\ast$}{*}}]{s\+\_\+text,  }\item[{\mbox{\hyperlink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}}}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Renders text in the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em position\+\_\+zero} & The position of the text UI in the window canvas, could be in pixels or relative to the window dimensions, depending on the {\ttfamily flags} argument. \\
+\hline
+{\em fill\+\_\+color\+\_\+zero} & The color of the text characters. \\
+\hline
+{\em scale\+\_\+pixels\+\_\+zero} & The scale of the text characters in pixels. \\
+\hline
+{\em s\+\_\+text} & Source string of characters to render. \\
+\hline
+{\em flags} & Flags for rendering the text, see \doxylink{shgui_8h_a0816f0c83c82d334cc0d58ba47f17a01}{Sh\+Gui\+Widget\+Flags}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_a72ab2169348cbc3f4637b85bb2434df0}\label{shgui_8h_a72ab2169348cbc3f4637b85bb2434df0} 
+\index{shgui.h@{shgui.h}!shGuiTextLineCount@{shGuiTextLineCount}}
+\index{shGuiTextLineCount@{shGuiTextLineCount}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiTextLineCount()}{shGuiTextLineCount()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Text\+Line\+Count (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s\+\_\+text,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Counts the number of lines in a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+\_\+text} & The text to count the lines of. \\
+\hline
+{\em p\+\_\+count} & A pointer to the variable to store the line count.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_ab7eef3f9e147fd4102686d6317796abd}\label{shgui_8h_ab7eef3f9e147fd4102686d6317796abd} 
+\index{shgui.h@{shgui.h}!shGuiUpdateInputs@{shGuiUpdateInputs}}
+\index{shGuiUpdateInputs@{shGuiUpdateInputs}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiUpdateInputs()}{shGuiUpdateInputs()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Update\+Inputs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Updates the GUI inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the function call, indicating success or failure. 
+\end{DoxyReturn}
+\Hypertarget{shgui_8h_af721c0d4b7fee360f542c155fa66225e}\label{shgui_8h_af721c0d4b7fee360f542c155fa66225e} 
+\index{shgui.h@{shgui.h}!shGuiWriteMemory@{shGuiWriteMemory}}
+\index{shGuiWriteMemory@{shGuiWriteMemory}!shgui.h@{shgui.h}}
+\doxysubsubsection{\texorpdfstring{shGuiWriteMemory()}{shGuiWriteMemory()}}
+{\footnotesize\ttfamily uint8\+\_\+t \mbox{\hyperlink{shgui_8h_a90c5d337ca88985682dbae705e3e77c5}{SH\+\_\+\+GUI\+\_\+\+CALL}} sh\+Gui\+Write\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sh_gui}{Sh\+Gui}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+gui,  }\item[{Vk\+Command\+Buffer}]{transfer\+\_\+cmd\+\_\+buffer,  }\item[{uint8\+\_\+t}]{begin\+\_\+cmd\+\_\+buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Writes memory to the GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gui} & A pointer to a valid \doxylink{struct_sh_gui}{Sh\+Gui} structure. \\
+\hline
+{\em transfer\+\_\+cmd\+\_\+buffer} & A Vulkan command buffer valid for memory transfer purposes, for more information see the Vulkan API documentation. \\
+\hline
+{\em begin\+\_\+cmd\+\_\+buffer} & A byte indicating whether to start recording the command buffer, for more information see the Vulkan API documentation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A result code indicating the success or failure of the function call. 
+\end{DoxyReturn}
