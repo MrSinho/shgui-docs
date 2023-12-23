@@ -1,9 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"shgui_8h.html#af21e9a483acf02a77d02f08cd1084c84":[10,0,0,2,0,0,1,75],
 "shgui_8h.html#af4cfc284383305f901dab9e31bb6ad6f":[10,0,0,2,0,0,1,71],
 "shgui_8h.html#af66d73a5b488af9c0941e06386891461":[10,0,0,2,0,0,1,93],
 "shgui_8h.html#af689a8711e8b353a6fc8cda0c39097d6":[10,0,0,2,0,0,1,104],
-"shgui_8h.html#af721c0d4b7fee360f542c155fa66225e":[10,0,0,2,0,0,1,117],
+"shgui_8h.html#af721c0d4b7fee360f542c155fa66225e":[10,0,0,2,0,0,1,118],
 "shgui_8h.html#af9ebb886cfa8e01160dd1c093ef3df26":[10,0,0,2,0,0,1,96],
 "shgui_8h_source.html":[10,0,0,2,0,0,1],
 "struct_sh_gui.html":[9,0,0],

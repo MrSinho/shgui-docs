@@ -490,6 +490,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac44e13be5c48989e420218e1dd467897" id="r_ac44e13be5c48989e420218e1dd467897"><td class="memItemLeft" align="right" valign="top">uint8_t <a class="el" href="shgui_8h.html#a90c5d337ca88985682dbae705e3e77c5">SH_GUI_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shgui_8h.html#ac44e13be5c48989e420218e1dd467897">shGuiReleaseMemory</a> (<a class="el" href="struct_sh_gui.html">ShGui</a> *p_gui)</td></tr>
 <tr class="memdesc:ac44e13be5c48989e420218e1dd467897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the memory allocated for the GUI.  <br /></td></tr>
 <tr class="separator:ac44e13be5c48989e420218e1dd467897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50045646aa7ca322dda304c18c050bd1" id="r_a50045646aa7ca322dda304c18c050bd1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shgui_8h.html#a50045646aa7ca322dda304c18c050bd1">shGuiResetWidgetCount</a> (<a class="el" href="struct_sh_gui.html">ShGui</a> *p_gui)</td></tr>
+<tr class="memdesc:a50045646aa7ca322dda304c18c050bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the count of regions and chars to zero.  <br /></td></tr>
+<tr class="separator:a50045646aa7ca322dda304c18c050bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd811e0d62c7500dc8cb86f75e4634b" id="r_aecd811e0d62c7500dc8cb86f75e4634b"><td class="memItemLeft" align="right" valign="top">uint8_t <a class="el" href="shgui_8h.html#a90c5d337ca88985682dbae705e3e77c5">SH_GUI_CALL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shgui_8h.html#aecd811e0d62c7500dc8cb86f75e4634b">shGuiRender</a> (<a class="el" href="struct_sh_gui.html">ShGui</a> *p_gui, VkCommandBuffer cmd_buffer, uint32_t swapchain_image_idx)</td></tr>
 <tr class="memdesc:aecd811e0d62c7500dc8cb86f75e4634b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the GUI using the provided command buffer and swapchain image index.  <br /></td></tr>
 <tr class="separator:aecd811e0d62c7500dc8cb86f75e4634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2981,6 +2984,41 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the function call, indicating success or failure. </dd></dl>
+
+</div>
+</div>
+<a id="a50045646aa7ca322dda304c18c050bd1" name="a50045646aa7ca322dda304c18c050bd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50045646aa7ca322dda304c18c050bd1">&#9670;&#160;</a></span>shGuiResetWidgetCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t shGuiResetWidgetCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_sh_gui.html">ShGui</a> *&#160;</td>
+          <td class="paramname"><em>p_gui</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the count of regions and chars to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_gui</td><td>A pointer to a valid <a class="el" href="struct_sh_gui.html">ShGui</a> structure.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A result code indicating the success or failure of the function call. </dd></dl>
 
 </div>
 </div>

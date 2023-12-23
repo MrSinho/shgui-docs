@@ -21,13 +21,14 @@ var searchData=
   ['shguireleasememory_18',['shGuiReleaseMemory',['../shgui_8h.html#ac44e13be5c48989e420218e1dd467897',1,'shgui.h']]],
   ['shguirender_19',['shGuiRender',['../shgui_8h.html#aecd811e0d62c7500dc8cb86f75e4634b',1,'shgui.h']]],
   ['shguiresetinputs_20',['shGuiResetInputs',['../shgui_8h.html#a8b3bc79cd9cb70483d361bba0c337615',1,'shgui.h']]],
-  ['shguiresizeinterface_21',['shGuiResizeInterface',['../shgui_8h.html#aa3af600ca32b31b38921432b71a745b3',1,'shgui.h']]],
-  ['shguiscaleui_22',['shGuiScaleUI',['../shgui_8h.html#a8f856bc2003792b4f495c4e06bb988ad',1,'shgui.h']]],
-  ['shguisetrenderpass_23',['shGuiSetRenderpass',['../shgui_8h.html#ac4149238a0577b942b1ded2c2703ddf9',1,'shgui.h']]],
-  ['shguisetsurface_24',['shGuiSetSurface',['../shgui_8h.html#a52453bea0f771d063f9eff32311158ee',1,'shgui.h']]],
-  ['shguisubmitinputs_25',['shGuiSubmitInputs',['../shgui_8h.html#a3c531649d79d3e4c4262898161a3aaf3',1,'shgui.h']]],
-  ['shguitext_26',['shGuiText',['../shgui_8h.html#ae1e1b1e3ae2c8bfa4482f9a74b759033',1,'shgui.h']]],
-  ['shguitextlinecount_27',['shGuiTextLineCount',['../shgui_8h.html#a72ab2169348cbc3f4637b85bb2434df0',1,'shgui.h']]],
-  ['shguiupdateinputs_28',['shGuiUpdateInputs',['../shgui_8h.html#ab7eef3f9e147fd4102686d6317796abd',1,'shgui.h']]],
-  ['shguiwritememory_29',['shGuiWriteMemory',['../shgui_8h.html#af721c0d4b7fee360f542c155fa66225e',1,'shgui.h']]]
+  ['shguiresetwidgetcount_21',['shGuiResetWidgetCount',['../shgui_8h.html#a50045646aa7ca322dda304c18c050bd1',1,'shgui.h']]],
+  ['shguiresizeinterface_22',['shGuiResizeInterface',['../shgui_8h.html#aa3af600ca32b31b38921432b71a745b3',1,'shgui.h']]],
+  ['shguiscaleui_23',['shGuiScaleUI',['../shgui_8h.html#a8f856bc2003792b4f495c4e06bb988ad',1,'shgui.h']]],
+  ['shguisetrenderpass_24',['shGuiSetRenderpass',['../shgui_8h.html#ac4149238a0577b942b1ded2c2703ddf9',1,'shgui.h']]],
+  ['shguisetsurface_25',['shGuiSetSurface',['../shgui_8h.html#a52453bea0f771d063f9eff32311158ee',1,'shgui.h']]],
+  ['shguisubmitinputs_26',['shGuiSubmitInputs',['../shgui_8h.html#a3c531649d79d3e4c4262898161a3aaf3',1,'shgui.h']]],
+  ['shguitext_27',['shGuiText',['../shgui_8h.html#ae1e1b1e3ae2c8bfa4482f9a74b759033',1,'shgui.h']]],
+  ['shguitextlinecount_28',['shGuiTextLineCount',['../shgui_8h.html#a72ab2169348cbc3f4637b85bb2434df0',1,'shgui.h']]],
+  ['shguiupdateinputs_29',['shGuiUpdateInputs',['../shgui_8h.html#ab7eef3f9e147fd4102686d6317796abd',1,'shgui.h']]],
+  ['shguiwritememory_30',['shGuiWriteMemory',['../shgui_8h.html#af721c0d4b7fee360f542c155fa66225e',1,'shgui.h']]]
 ];
