@@ -49,7 +49,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">shgui<span id="projectnumber">&#160;v1.0.0</span>
+   <div id="projectname">shgui<span id="projectnumber">&#160;pre-release</span>
    </div>
    <div id="projectbrief">shgui by mrsinho</div>
   </td>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('md__d_1_2home_2desktop_2github_2shgui_
 <div class="line">min frequency : 0.0 MHz</div>
 <div class="line">max frequency : 0.0 MHz</div>
 <div class="line">cores         : 4</div>
-</div><!-- fragment --><p>build ran for <code>94.37 s</code> and terminated with exit code <code>0</code></p>
+</div><!-- fragment --><p>build ran for <code>80.16 s</code> and terminated with exit code <code>0</code></p>
 <hr  />
 <div class="fragment"><div class="line">function PREREQUISITES {</div>
 <div class="line">    sudo apt -y update</div>
@@ -139,8 +139,8 @@ $(document).ready(function(){initNavTree('md__d_1_2home_2desktop_2github_2shgui_
 <div class="line"> </div>
 <div class="line">PREREQUISITES &gt; .shci/linux/prerequisites-output.txt</div>
 </div><!-- fragment --><div class="fragment"><div class="line">Hit:1 http://deb.debian.org/debian bullseye InRelease</div>
-<div class="line">Hit:2 http://deb.debian.org/debian bullseye-updates InRelease</div>
-<div class="line">Hit:3 http://security.debian.org/debian-security bullseye-security InRelease</div>
+<div class="line">Hit:2 http://security.debian.org/debian-security bullseye-security InRelease</div>
+<div class="line">Hit:3 http://deb.debian.org/debian bullseye-updates InRelease</div>
 <div class="line">Hit:4 http://ftp.debian.org/debian bullseye-backports InRelease</div>
 <div class="line">Reading package lists...</div>
 <div class="line">Building dependency tree...</div>
@@ -177,32 +177,108 @@ $(document).ready(function(){initNavTree('md__d_1_2home_2desktop_2github_2shgui_
 </div><!-- fragment --><hr  />
 <div class="fragment"><div class="line">function BUILD {</div>
 <div class="line">    mkdir build</div>
-<div class="line">    mkdir build/linux</div>
-<div class="line">    cd build/linux</div>
+<div class="line">    cd    build</div>
+<div class="line">    mkdir linux</div>
+<div class="line">    cd    linux</div>
 <div class="line"> </div>
 <div class="line">    cmake ../../ -DSH_GUI_BUILD_EXAMPLE=ON</div>
 <div class="line">    cmake --build .</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">BUILD &gt; .shci/linux/build-output.txt</div>
-</div><!-- fragment --><div class="fragment"><div class="line">-- shvulkan message: found Vulkan</div>
+</div><!-- fragment --><div class="fragment"><div class="line">-- The C compiler identification is GNU 10.2.1</div>
+<div class="line">-- Detecting C compiler ABI info</div>
+<div class="line">-- Detecting C compiler ABI info - done</div>
+<div class="line">-- Check for working C compiler: /usr/bin/cc - skipped</div>
+<div class="line">-- Detecting C compile features</div>
+<div class="line">-- Detecting C compile features - done</div>
+<div class="line">-- Found Vulkan: /usr/lib/x86_64-linux-gnu/libvulkan.so  </div>
+<div class="line">-- shvulkan message: found Vulkan</div>
 <div class="line">-- shvulkan message: Vulkan_INCLUDE_DIR: /usr/include</div>
 <div class="line">-- shvulkan message: Vulkan_LIBRARY:     /usr/lib/x86_64-linux-gnu/libvulkan.so</div>
+<div class="line">-- SH_GUI_VERSION       : pre-release</div>
+<div class="line">-- SH_GUI_ROOT_DIR      : /mnt/d/home/desktop/github/shgui</div>
+<div class="line">-- SH_GUI_BINARIES_DIR  : /mnt/d/home/desktop/github/shgui/bin</div>
+<div class="line">-- SH_GUI_BUILD_EXAMPLE : ON</div>
+<div class="line">-- Looking for pthread.h</div>
+<div class="line">-- Looking for pthread.h - found</div>
+<div class="line">-- Performing Test CMAKE_HAVE_LIBC_PTHREAD</div>
+<div class="line">-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed</div>
+<div class="line">-- Looking for pthread_create in pthreads</div>
+<div class="line">-- Looking for pthread_create in pthreads - not found</div>
+<div class="line">-- Looking for pthread_create in pthread</div>
+<div class="line">-- Looking for pthread_create in pthread - found</div>
+<div class="line">-- Found Threads: TRUE  </div>
 <div class="line">-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) </div>
 <div class="line">-- Including X11 support</div>
+<div class="line">-- Found X11: /usr/include   </div>
+<div class="line">-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so</div>
+<div class="line">-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found</div>
+<div class="line">-- Looking for gethostbyname</div>
+<div class="line">-- Looking for gethostbyname - found</div>
+<div class="line">-- Looking for connect</div>
+<div class="line">-- Looking for connect - found</div>
+<div class="line">-- Looking for remove</div>
+<div class="line">-- Looking for remove - found</div>
+<div class="line">-- Looking for shmat</div>
+<div class="line">-- Looking for shmat - found</div>
 <div class="line">-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) </div>
 <div class="line">-- Configuring done</div>
 <div class="line">-- Generating done</div>
 <div class="line">-- Build files have been written to: /mnt/d/home/desktop/github/shgui/build/linux</div>
+<div class="line">Scanning dependencies of target shvulkan</div>
+<div class="line">[  2%] Building C object externals/shvulkan/CMakeFiles/shvulkan.dir/shvulkan/src/shvulkan/shVulkan.c.o</div>
+<div class="line">[  5%] Linking C static library ../../../../bin/linux/libshvulkan.a</div>
 <div class="line">[  5%] Built target shvulkan</div>
+<div class="line">Scanning dependencies of target shgui</div>
+<div class="line">[  8%] Building C object CMakeFiles/shgui.dir/shgui/src/shgui.c.o</div>
+<div class="line">[ 10%] Building C object CMakeFiles/shgui.dir/shgui/src/shgui-font.c.o</div>
+<div class="line">[ 13%] Linking C static library ../../bin/linux/libshgui.a</div>
 <div class="line">[ 13%] Built target shgui</div>
+<div class="line">Scanning dependencies of target glfw</div>
+<div class="line">[ 16%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/context.c.o</div>
+<div class="line">[ 18%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/init.c.o</div>
+<div class="line">[ 21%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/input.c.o</div>
+<div class="line">[ 24%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/monitor.c.o</div>
+<div class="line">[ 27%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/platform.c.o</div>
+<div class="line">[ 29%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o</div>
+<div class="line">[ 32%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/window.c.o</div>
+<div class="line">[ 35%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o</div>
+<div class="line">[ 37%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o</div>
+<div class="line">[ 40%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/null_init.c.o</div>
+<div class="line">[ 43%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o</div>
+<div class="line">[ 45%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/null_window.c.o</div>
+<div class="line">[ 48%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o</div>
+<div class="line">[ 51%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o</div>
+<div class="line">[ 54%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o</div>
+<div class="line">[ 56%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o</div>
+<div class="line">[ 59%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o</div>
+<div class="line">[ 62%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o</div>
+<div class="line">[ 64%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o</div>
+<div class="line">[ 67%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o</div>
+<div class="line">[ 70%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o</div>
+<div class="line">[ 72%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o</div>
+<div class="line">[ 75%] Building C object externals/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o</div>
+<div class="line">[ 78%] Linking C static library ../../../../../bin/linux/libglfw3.a</div>
 <div class="line">[ 78%] Built target glfw</div>
+<div class="line">Scanning dependencies of target shgui-app</div>
+<div class="line">[ 81%] Building C object CMakeFiles/shgui-app.dir/shgui-app/src/shgui-app.c.o</div>
+<div class="line">[ 83%] Linking C static library ../../bin/linux/libshgui-app.a</div>
 <div class="line">[ 83%] Built target shgui-app</div>
+<div class="line">Scanning dependencies of target shgui-example</div>
+<div class="line">[ 86%] Building C object CMakeFiles/shgui-example.dir/shgui-example/src/shgui-example.c.o</div>
+<div class="line">[ 89%] Linking C executable ../../bin/linux/shgui-example</div>
 <div class="line">[ 89%] Built target shgui-example</div>
+<div class="line">Scanning dependencies of target native-export</div>
+<div class="line">[ 91%] Building C object externals/native-export/c/CMakeFiles/native-export.dir/native-export/src/native-export.c.o</div>
+<div class="line">[ 94%] Linking C static library ../../../../../bin/linux/libnative-export.a</div>
 <div class="line">[ 94%] Built target native-export</div>
+<div class="line">Scanning dependencies of target shgui-export-shaders</div>
+<div class="line">[ 97%] Building C object CMakeFiles/shgui-export-shaders.dir/shgui-shaders/src/export-shaders.c.o</div>
+<div class="line">[100%] Linking C executable ../../bin/linux/shgui-export-shaders</div>
 <div class="line">[100%] Built target shgui-export-shaders</div>
 </div><!-- fragment --><hr  />
-<p>build ran for <code>94.37 s</code> and terminated with exit code <code>0</code></p>
+<p>build ran for <code>80.16 s</code> and terminated with exit code <code>0</code></p>
 <hr  />
  </div></div><!-- contents -->
 </div><!-- PageDoc -->

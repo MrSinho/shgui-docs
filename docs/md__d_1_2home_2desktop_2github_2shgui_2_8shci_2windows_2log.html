@@ -49,7 +49,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">shgui<span id="projectnumber">&#160;v1.0.0</span>
+   <div id="projectname">shgui<span id="projectnumber">&#160;pre-release</span>
    </div>
    <div id="projectbrief">shgui by mrsinho</div>
   </td>
@@ -127,23 +127,13 @@ $(document).ready(function(){initNavTree('md__d_1_2home_2desktop_2github_2shgui_
 <div class="line">min frequency : 0.0 MHz</div>
 <div class="line">max frequency : 3500.0 MHz</div>
 <div class="line">cores         : 4</div>
-</div><!-- fragment --><p>build ran for <code>26.36 s</code> and terminated with exit code <code>0</code></p>
+</div><!-- fragment --><p>build ran for <code>60.46 s</code> and terminated with exit code <code>0</code></p>
 <hr  />
 <div class="fragment"><div class="line">&gt; .shci/windows/prerequisites-output.txt (</div>
 <div class="line">    choco install -y curl mingw cmake</div>
 <div class="line">    mingw-get install gcc mingw32-make gdb</div>
 <div class="line">)</div>
 </div><!-- fragment --><div class="fragment"><div class="line">Chocolatey v2.0.0</div>
-<div class="line">2 validations performed. 1 success(es), 1 warning(s), and 0 error(s).</div>
-<div class="line"> </div>
-<div class="line">Validation Warnings:</div>
-<div class="line"> - A pending system reboot request has been detected, however, this is</div>
-<div class="line">   being ignored due to the current Chocolatey configuration.  If you</div>
-<div class="line">   want to halt when this occurs, then either set the global feature</div>
-<div class="line">   using:</div>
-<div class="line">     choco feature enable -name=exitOnRebootDetected</div>
-<div class="line">   or pass the option --exit-when-reboot-detected.</div>
-<div class="line"> </div>
 <div class="line">Chocolatey detected you are not running from an elevated command shell</div>
 <div class="line"> (cmd/powershell).</div>
 <div class="line"> </div>
@@ -184,23 +174,98 @@ $(document).ready(function(){initNavTree('md__d_1_2home_2desktop_2github_2shgui_
 </div><!-- fragment --><hr  />
 <div class="fragment"><div class="line">&gt; .shci/windows/build-output.txt (</div>
 <div class="line">    mkdir build</div>
-<div class="line">    mkdir build/windows</div>
-<div class="line">    cd build/windows</div>
+<div class="line">    cd    build</div>
+<div class="line">    mkdir windows</div>
+<div class="line">    cd    windows</div>
 <div class="line">    </div>
-<div class="line">    cmake -DSH_GUI_BUILD_EXAMPLE=ON ..</div>
+<div class="line">    cmake ../../ -DSH_GUI_BUILD_EXAMPLE=ON</div>
 <div class="line">    cmake --build .</div>
 <div class="line">)</div>
-</div><!-- fragment --><div class="fragment"><div class="line">Versione di MSBuild L17.7.2+d6990bcfa per .NET Framework</div>
+</div><!-- fragment --><div class="fragment"><div class="line">-- Building for: Visual Studio 17 2022</div>
+<div class="line">-- Selecting Windows SDK version 10.0.22000.0 to target Windows 10.0.22621.</div>
+<div class="line">-- The C compiler identification is MSVC 19.37.32822.0</div>
+<div class="line">-- Detecting C compiler ABI info</div>
+<div class="line">-- Detecting C compiler ABI info - done</div>
+<div class="line">-- Check for working C compiler: D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe - skipped</div>
+<div class="line">-- Detecting C compile features</div>
+<div class="line">-- Detecting C compile features - done</div>
+<div class="line">-- Found Vulkan: D:/lib/vulkan-sdk-1.3.261.1/Lib/vulkan-1.lib (found version &quot;1.3.261&quot;) found components: glslc glslangValidator </div>
+<div class="line">-- shvulkan message: found Vulkan</div>
+<div class="line">-- shvulkan message: Vulkan_INCLUDE_DIR: D:/lib/vulkan-sdk-1.3.261.1/Include</div>
+<div class="line">-- shvulkan message: Vulkan_LIBRARY:     D:/lib/vulkan-sdk-1.3.261.1/Lib/vulkan-1.lib</div>
+<div class="line">-- SH_GUI_VERSION       : pre-release</div>
+<div class="line">-- SH_GUI_ROOT_DIR      : D:/home/desktop/github/shgui</div>
+<div class="line">-- SH_GUI_BINARIES_DIR  : D:/home/desktop/github/shgui/bin</div>
+<div class="line">-- SH_GUI_BUILD_EXAMPLE : ON</div>
+<div class="line">-- Performing Test CMAKE_HAVE_LIBC_PTHREAD</div>
+<div class="line">-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed</div>
+<div class="line">-- Looking for pthread_create in pthreads</div>
+<div class="line">-- Looking for pthread_create in pthreads - not found</div>
+<div class="line">-- Looking for pthread_create in pthread</div>
+<div class="line">-- Looking for pthread_create in pthread - not found</div>
+<div class="line">-- Found Threads: TRUE  </div>
+<div class="line">-- Found Doxygen: D:/bin/doxygen/bin/doxygen.exe (found version &quot;1.9.8&quot;) found components: doxygen </div>
+<div class="line">-- Including Win32 support</div>
+<div class="line">-- Found Doxygen: D:/bin/doxygen/bin/doxygen.exe (found version &quot;1.9.8&quot;) found components: doxygen missing components: dot</div>
+<div class="line">-- Configuring D:/home/desktop/github/shgui/docs/Doxyfile from D:/home/desktop/github/shgui/docs/Doxyfile.in</div>
+<div class="line">-- Creating custom docs command: D:/bin/doxygen/bin/doxygen.exe D:/home/desktop/github/shgui/docs/Doxyfile</div>
+<div class="line">-- Configuring done (11.2s)</div>
+<div class="line">-- Generating done (0.4s)</div>
+<div class="line">-- Build files have been written to: D:/home/desktop/github/shgui/build/windows</div>
+<div class="line">Versione di MSBuild L17.7.2+d6990bcfa per .NET Framework</div>
 <div class="line"> </div>
-<div class="line">  glfw.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\externals\glfw\src\OFF\windows\Debug\glfw3.lib</div>
-<div class="line">  native-export.vcxproj -&gt; D:\home\desktop\github\shgui\bin\Debug\native-export.lib</div>
-<div class="line">  shvulkan.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\externals\shvulkan\OFF\windows\Debug\shvulkan.lib</div>
-<div class="line">  shgui.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\OFF\windows\Debug\shgui.lib</div>
-<div class="line">  shgui-app.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\OFF\windows\Debug\shgui-app.lib</div>
-<div class="line">  shgui-example.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\OFF\windows\Debug\shgui-example.exe</div>
-<div class="line">  shgui-export-shaders.vcxproj -&gt; D:\home\desktop\github\shgui\build\windows\OFF\windows\Debug\shgui-export-shaders.exe</div>
+<div class="line">  Checking Build System</div>
+<div class="line">  Generating HTML documentation</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/externals/glfw/docs/CMakeLists.txt</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/externals/glfw/src/CMakeLists.txt</div>
+<div class="line">  context.c</div>
+<div class="line">  init.c</div>
+<div class="line">  input.c</div>
+<div class="line">  monitor.c</div>
+<div class="line">  platform.c</div>
+<div class="line">  vulkan.c</div>
+<div class="line">  window.c</div>
+<div class="line">  egl_context.c</div>
+<div class="line">  osmesa_context.c</div>
+<div class="line">  null_init.c</div>
+<div class="line">  null_monitor.c</div>
+<div class="line">  null_window.c</div>
+<div class="line">  null_joystick.c</div>
+<div class="line">  win32_module.c</div>
+<div class="line">  win32_time.c</div>
+<div class="line">  win32_thread.c</div>
+<div class="line">  win32_init.c</div>
+<div class="line">  win32_joystick.c</div>
+<div class="line">  win32_monitor.c</div>
+<div class="line">  win32_window.c</div>
+<div class="line">  Generazione del codice in corso...</div>
+<div class="line">  Compilazione in corso...</div>
+<div class="line">  wgl_context.c</div>
+<div class="line">  Generazione del codice in corso...</div>
+<div class="line">  glfw.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\glfw3.lib</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/externals/native-export/c/CMakeLists.txt</div>
+<div class="line">  native-export.c</div>
+<div class="line">  native-export.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\native-export.lib</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/externals/shvulkan/CMakeLists.txt</div>
+<div class="line">  shVulkan.c</div>
+<div class="line">  shvulkan.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\shvulkan.lib</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/CMakeLists.txt</div>
+<div class="line">  shgui.c</div>
+<div class="line">  shgui-font.c</div>
+<div class="line">  Generazione del codice in corso...</div>
+<div class="line">  shgui.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\shgui.lib</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/CMakeLists.txt</div>
+<div class="line">  shgui-app.c</div>
+<div class="line">  shgui-app.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\shgui-app.lib</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/CMakeLists.txt</div>
+<div class="line">  shgui-example.c</div>
+<div class="line">  shgui-example.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\shgui-example.exe</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/CMakeLists.txt</div>
+<div class="line">  export-shaders.c</div>
+<div class="line">  shgui-export-shaders.vcxproj -&gt; D:\home\desktop\github\shgui\bin\windows\Debug\shgui-export-shaders.exe</div>
+<div class="line">  Building Custom Rule D:/home/desktop/github/shgui/CMakeLists.txt</div>
 </div><!-- fragment --><hr  />
-<p>build ran for <code>26.36 s</code> and terminated with exit code <code>0</code></p>
+<p>build ran for <code>60.46 s</code> and terminated with exit code <code>0</code></p>
 <hr  />
  </div></div><!-- contents -->
 </div><!-- PageDoc -->
